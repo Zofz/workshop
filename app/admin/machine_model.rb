@@ -1,4 +1,5 @@
 ActiveAdmin.register MachineModel do
+  permit_params 
 
 
   # See permitted parameters documentation:
