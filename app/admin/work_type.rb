@@ -1,4 +1,5 @@
 ActiveAdmin.register WorkType do
+  permit_params :title, :comment
 
 
   # See permitted parameters documentation:
