@@ -1,4 +1,5 @@
 ActiveAdmin.register Customer do
+  permit_params :name, :lastname, :cellphone, :phone, :email, :old_id, :company, :company_name, :org_nbr, :comment
 
 
   # See permitted parameters documentation:
