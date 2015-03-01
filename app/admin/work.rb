@@ -1,4 +1,5 @@
 ActiveAdmin.register Work do
+  permit_params :done_at, :pickup_at, :notification, :finished, :invoiced, :invoice_nbr
 
 
   # See permitted parameters documentation:
