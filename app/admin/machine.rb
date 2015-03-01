@@ -1,4 +1,5 @@
 ActiveAdmin.register Machine do
+  permit_params :old_id, :serial_nbr, :manufactured, :engine_nbr, :deck_nbr, :old_id
 
 
   # See permitted parameters documentation:
