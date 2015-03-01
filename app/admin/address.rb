@@ -1,4 +1,5 @@
 ActiveAdmin.register Address do
+  permit_params :street, :comment
 
 
   # See permitted parameters documentation:
