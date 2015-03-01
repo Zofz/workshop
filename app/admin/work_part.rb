@@ -1,4 +1,5 @@
 ActiveAdmin.register WorkPart do
+  permit_params :finished
 
 
   # See permitted parameters documentation:
