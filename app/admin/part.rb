@@ -1,4 +1,5 @@
 ActiveAdmin.register Part do
+  permit_params :on_order, :stock, :product_number, :bar_code, :price
 
 
   # See permitted parameters documentation:
