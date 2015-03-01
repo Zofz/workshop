@@ -1,4 +1,5 @@
 ActiveAdmin.register Drive do
+  permit_params :date
 
 
   # See permitted parameters documentation:
