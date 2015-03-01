@@ -1,4 +1,5 @@
 ActiveAdmin.register StorageRoom do
+  permit_params :title
 
 
   # See permitted parameters documentation:
