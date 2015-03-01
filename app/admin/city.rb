@@ -1,4 +1,5 @@
 ActiveAdmin.register City do
+  permit_params :postal_title, :title, :postal_code
 
 
   # See permitted parameters documentation:
