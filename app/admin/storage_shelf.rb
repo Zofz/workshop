@@ -1,4 +1,5 @@
 ActiveAdmin.register StorageShelf do
+  permit_params :level, :row, :column, :title
 
 
   # See permitted parameters documentation:
