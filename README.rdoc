@@ -1,4 +1,4 @@
-[![Dependency Status](https://gemnasium.com/davidwessman/workshop.svg)](https://gemnasium.com/davidwessman/workshop)
+{<img src="https://gemnasium.com/davidwessman/workshop.svg" alt="Dependency Status" />}[https://gemnasium.com/davidwessman/workshop]
 
 == README
 
