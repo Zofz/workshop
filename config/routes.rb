@@ -1,11 +1,25 @@
 Rails.application.routes.draw do
-  get 'statics/index'
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  # Scope to change urls to swedish
+  scope path_names: { new: 'ny',edit: 'redigera' } do
+    resources :customers, path: :kunder do
+      resources :addresses, path: :adresser, on: :member
+      resources :machines, path: :maskiner, on: :member do
+        resources :works, path: :arbete, on: :member
+      end
+    end
+    resources :cities, path: :stader do
+      post :search, :sok, on: :collection
+    end
+  end
+
+
 
   # You can have the root of your site routed with "root"
   root 'statics#index'

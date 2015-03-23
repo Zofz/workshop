@@ -1,0 +1,13 @@
+<%= form_for([parent,@address], remote: true) do%>
+    <%=render 'shared/form_errors', current: @customer%>
+    <%= f.label 'Stad', class: 'reg-label'%>
+    <div class="input-group margin-bottom-20 row">
+      <div class="col-md-6"><%= f.text_field(:name, class: 'form-control',placeholder: :name)%></div>
+      <div class="col-md-6"><%= f.text_field(:lastname, class:'form-control', placeholder: :lastname)%></div>
+    </div>
+    <%= f.label :phone, class: 'reg-label'%>
+    <div class="input-group margin-bottom-20 row">
+      <div class="col-md-6"><%= f.phone_field(:phone, class:'form-control',placeholder: :phone)%></div>
+      <div class="col-md-6"><%= f.phone_field(:cellphone, class:'form-control',placeholder: :cellphone)%></div>
+    </div>
+<%end%>

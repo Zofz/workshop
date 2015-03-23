@@ -1,3 +1,5 @@
+[![Dependency Status](https://gemnasium.com/davidwessman/workshop.svg)](https://gemnasium.com/davidwessman/workshop)
+
 == README
 
 This README would normally document whatever steps are necessary to get the
