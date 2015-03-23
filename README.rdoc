@@ -1,7 +1,7 @@
 {<img src="https://gemnasium.com/davidwessman/workshop.svg" alt="Dependency Status" />}[https://gemnasium.com/davidwessman/workshop]
 {<img src="https://codeclimate.com/github/davidwessman/workshop/badges/gpa.svg" />}[https://codeclimate.com/github/davidwessman/workshop]
 {<img src="https://codeclimate.com/github/davidwessman/workshop/badges/coverage.svg" />}[https://codeclimate.com/github/davidwessman/workshop]
-
+{<img src="https://hakiri.io/github/davidwessman/workshop/master.svg" alt="security" />}[https://hakiri.io/github/davidwessman/workshop/master]
 
 == README
 
