@@ -49,4 +49,16 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  config.include Devise::TestHelpers, type: :controller
+  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+  def build *args
+    FactoryGirl.build *args
+  end
+
+  def create *args
+    FactoryGirl.create *args
+  end
+
 end

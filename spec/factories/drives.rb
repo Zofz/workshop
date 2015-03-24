@@ -3,7 +3,5 @@ FactoryGirl.define do
     work
     address
     date { Time.zone.now + 3.days }
-    user
   end
-
 end

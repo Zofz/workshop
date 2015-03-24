@@ -8,14 +8,15 @@ class User < ActiveRecord::Base
   #->Prelang (user_login:devise/username_login_support)
   has_many :work_parts
   has_many :works
+  has_many :addresses
 
   def print
-    if self.name && self.lastname
-      %(#{self.name} #{self.lastname})
-    elsif self.name
-      self.name
+    if name? && lastname?
+      %(#{name} #{lastname})
+    elsif name
+      name
     else
-      self.username
+      username
     end
   end
 

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   sequence(:access_code) { (0...15).map { (65 + rand(26)).chr }.join.to_s }
-  sequence(:description) { |n| "This describes the most impressive nr#{n}" }
+  sequence(:comment) { |n| "This describes the most impressive nr#{n}" }
   sequence(:email) { |n| "d.wessman#{n}@fsektionen.se" }
   sequence(:lastname) { |n| "Wessman#{n}" }
   sequence(:name) { |n| "David#{n}" }
@@ -10,7 +10,7 @@ FactoryGirl.define do
   sequence(:title) { |n| "Titel#{n}" }
   sequence(:url) { |n| "url#{n}" }
   sequence(:username) { |n| "davidwessman#{n}" }
-  sequence(:value) { |n| "david#{n}" }
+  sequence(:password) { |n| "12030283sds#{n}" }
   sequence(:location) { ['MH:A', 'Hilbert', 'Kårhuset', 'Ön-ön', 'Sjönsjön', 'Bastun'].sample }
 
 
@@ -20,15 +20,15 @@ FactoryGirl.define do
   sequence(:street) { |n| "Briggvägen #{n}" }
   sequence(:postal_code) { |n| "226 #{n}" }
 
-  sequence(:serial_number) { |n| "1926-1234-33#{n}" }
+  sequence(:serial_nbr) { |n| "1926-1234-33#{n}" }
   sequence(:order_number) { |n| "1926-1234-33#{n}" }
   sequence(:product_number) { |n| "2200-3231-12#{n}" }
-  sequence(:engine_number) { |n| "9953-2535-12#{n}" }
-  sequence(:deck_number) { |n| "226 #{n}" }
+  sequence(:engine_nbr) { |n| "9953-2535-12#{n}" }
+  sequence(:deck_nbr) { |n| "226 #{n}" }
 
   sequence(:stock) { Random.new.rand(5..500) }
   sequence(:price) { Random.new.rand(5..500) }
-  sequence(:barcode) { |n| "750103#{n}31130" }
+  sequence(:bar_code) { |n| "750103#{n}31130" }
 
   sequence(:add_number) { |n| " nr.#{n}" }
 
