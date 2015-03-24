@@ -1,13 +1,11 @@
 FactoryGirl.define do
   factory :machine do
-    customer nil
-old_id "MyString"
-serial_nbr "MyString"
-product nil
-manufactured "2015-03-01"
-engine_nbr "MyString"
-deck_nbr "MyString"
-old_id "MyString"
+    customer
+    old_id { customer.old_id }
+    serial_nbr
+    product
+    manufactured { Time.zone.now - 3.years }
+    engine_nbr
+    deck_nbr
   end
-
 end

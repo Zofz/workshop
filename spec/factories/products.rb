@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :product do
-    machine_model nil
-product_number "MyString"
-order_number "MyString"
+    machine_model
+    product_number
+    order_number
   end
 
 end

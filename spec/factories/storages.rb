@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :storage do
-    storage_spot nil
-machine nil
-taken_out "2015-03-01 17:38:56"
+    storage_spot
+    machine
+    taken_out { Time.zone.now }
   end
 
 end

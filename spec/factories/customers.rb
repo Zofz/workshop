@@ -1,15 +1,15 @@
 FactoryGirl.define do
   factory :customer do
-    name "MyString"
-lastname "MyString"
-cellphone "MyString"
-phone "MyString"
-email "MyString"
-old_id "MyString"
-company false
-company_name "MyString"
-org_nbr "MyString"
-comment "MyText"
-  end
+    name
+    lastname
+    cellphone
+    phone
+    email
 
+    trait :w_company do
+      company true
+      company_name
+      org_nbr
+    end
+  end
 end

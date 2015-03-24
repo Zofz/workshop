@@ -1,10 +1,13 @@
 FactoryGirl.define do
   factory :part do
-    on_order false
-stock "9.99"
-product_number "MyString"
-bar_code "MyString"
-price "9.99"
+    stock
+    product_number
+    bar_code
+    price
+
+    trait :ordered do
+      on_order true
+    end
   end
 
 end

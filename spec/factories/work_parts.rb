@@ -1,9 +1,14 @@
 FactoryGirl.define do
   factory :work_part do
-    work nil
-work_type nil
-finished false
-user nil
-  end
+    work
+    work_type
 
+    trait :done do
+      finished true
+    end
+
+    trait :assigned do
+      user
+    end
+  end
 end
