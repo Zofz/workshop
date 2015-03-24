@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18.1'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -57,6 +57,8 @@ gem 'bootstrap-sass-extras'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 gem 'font-awesome-rails'
+gem 'paper_trail', '~> 4.0.0.beta'
+gem 'simple_form'
 
 group :test do
   gem 'shoulda-matchers'
@@ -66,4 +68,5 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'pry'
 end
