@@ -1,0 +1,37 @@
+sv:
+  simple_form:
+    "yes": 'Ja'
+    "no": 'Nej'
+    required:
+      text: 'krävs'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Kontrollera felen:"
+    labels:
+      defaults:
+        username: Användarnamn
+        login: 'E-post eller Användarnamn'
+        email: E-post
+        firstname: Förnamn
+        lastname: Efternamn
+        phone: Telefon
+        password: 'Lösenord'
+        password_confirmation: Bekräfta lösenord
+      user:
+       new:
+         email: 'E-post to sign in.'
+       edit:
+         email: 'E-post.'
+    hints:
+      defaults:
+       email: 'E-post för att logga in'
+       password: 'No special characters, please.'
+      include_blanks:
+      defaults:
+       age: 'Rather not say'
+      prompts:
+      defaults:
+       age: 'Select your age'

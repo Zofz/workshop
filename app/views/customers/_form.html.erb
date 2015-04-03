@@ -1,39 +1,27 @@
-<%= form_for(@customer, html: { autocomplete: 'off' }, remote: true) do |f| %>
-    <%=render 'shared/form_errors', current: @customer%>
-    <%= f.label 'Namn', class: 'reg-label'%>
-    <div class="input-group margin-bottom-20 row">
-      <div class="col-md-6"><%= f.text_field(:name, class: 'form-control',placeholder: :name)%></div>
-      <div class="col-md-6"><%= f.text_field(:lastname, class:'form-control', placeholder: :lastname)%></div>
-    </div>
-    <%= f.label :phone, class: 'reg-label'%>
-    <div class="input-group margin-bottom-20 row">
-      <div class="col-md-6"><%= f.phone_field(:phone, class:'form-control',placeholder: :phone)%></div>
-      <div class="col-md-6"><%= f.phone_field(:cellphone, class:'form-control',placeholder: :cellphone)%></div>
+<%= simple_form_for(@customer, html: {class: 'form-horizontal form-company'}) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :lastname %>
+      <%= f.input :phone %>
+      <%= f.input :cellphone %>
+      <%= f.input :email %>
+      <%= f.input :old_id %>
     </div>
 
-    <%= f.label :email, class: 'reg-label'%>
-    <div class="input-group margin-bottom-20">
-      <%= f.email_field(:email, class:'form-control',placeholder: :email)%>
-    </div>
     <div id="addresses">
       <%if !@customer.new_record? %>
-        <%= link_to('Lägg till adress', new_customer_address_path(@customer), remote: true)%>
+          <%= link_to('Lägg till adress', new_customer_address_path(@customer), remote: true)%>
           <hr>
       <%end%>
     </div>
-    <%= f.label :company, class: 'reg-label'%>
-    <div class="input-group margin-bottom-20">
-      <%= f.check_box(:company,id:'toggle-company')%>
-    </div>
-    <div id ="company" class="company hidden">
-      <%= f.label :org_nbr, class: 'reg-label'%>
-      <div class="input-group margin-bottom-20">
-        <%= f.text_field(:org_nbr, class:'form-control',placeholder: :org_nbr)%>
+    <%= f.association :company, collection: @companies %>
+
+    <div class="form-group">
+      <div class="col-md-offset-4 col-md-8">
+        <%= f.button :submit, class: 'btn btn-primary' %>
       </div>
     </div>
 
-
-    <div class="row">
-      <%= f.submit(class: 'btn-u pull-right')%>
-    </div>
 <% end %>

@@ -2,13 +2,23 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-        :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  #devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
+  devise :database_authenticatable, :rememberable, :registerable
   attr_accessor :login
-  
-  #->Prelang (user_login:devise/username_login_support)
-  has_many :work_parts
+  belongs_to :role
+  has_many :work_activities
   has_many :works
   has_many :addresses
+
+  #validates :username,
+  #          presence: true,
+  #          uniqueness: {
+  #              case_sensitive: false
+  #          }
 
   def print
     if name? && lastname?
@@ -16,19 +26,21 @@ class User < ActiveRecord::Base
     elsif name
       name
     else
-      username
+      email
     end
   end
 
-  def self.find_first_by_auth_conditions(warden_conditions)
-    conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.downcase}]).first
-    else
-      where(conditions).first
-    end
+  def admin?
+    role.try(:title) == :admin
   end
 
+  #def self.find_for_database_authentication(warden_conditions)
+  #  conditions = warden_conditions.dup
+  #  if login = conditions.delete(:login)
+  #    where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { value: login.downcase }]).first
+   # else
+   #   where(conditions.to_hash).first
+   # end
+  #end
 
-  devise authentication_keys: [:login]
 end

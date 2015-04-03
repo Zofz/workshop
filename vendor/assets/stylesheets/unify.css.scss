@@ -980,7 +980,6 @@ a.btn-u {
   }
 }
 
-
 @media (max-width: 768px) {
   @-moz-document url-prefix() {
     .btn-u {
@@ -2688,7 +2687,7 @@ blockquote {
     text-align: right;
     text-shadow: none;
     position: absolute;
-    filter: Alpha(opacity = 100);
+    filter: Alpha(opacity=100);
     /*For IE*/
     &.left {
       right: 27px;

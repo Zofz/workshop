@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Role.find_or_create_by!(title: :admin, name: 'Administratör', description: 'Detta är en administratör')
+Role.find_or_create_by!(title: :owner, name: 'Ägare', description: 'Detta är en ägare')
+Role.find_or_create_by!(title: :worker, name: 'Arbetare', description: 'Detta är en arbetare')

@@ -6,7 +6,10 @@ FactoryGirl.define do
     name
     lastname
     phone
-    address
+
+    after(:create) do |user|
+      create(:address, user: user)
+    end
   end
 
 end

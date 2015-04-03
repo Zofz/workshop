@@ -1,4 +1,6 @@
 class Brand < ActiveRecord::Base
-  has_and_belongs_to_many :machine_types
-  has_many :products
+  has_many :machine_models
+  has_many :machine_types, through: :machine_models
+  has_many :products, through: :machine_models
+  has_many :parts, through: :machine_models
 end

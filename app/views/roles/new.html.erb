@@ -1,0 +1,9 @@
+<h1><%=model_name(Role)%></h1>
+
+<%= simple_form_for @user do |f| %>
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back', roles_path %>

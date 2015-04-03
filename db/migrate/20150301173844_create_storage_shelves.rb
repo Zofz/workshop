@@ -6,6 +6,7 @@ class CreateStorageShelves < ActiveRecord::Migration
       t.integer :row
       t.integer :column
       t.string :title
+      t.text    :comment
 
       t.timestamps
     end

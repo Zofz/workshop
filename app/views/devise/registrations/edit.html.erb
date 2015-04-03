@@ -1,39 +1,86 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="profile">
+  <div class="container content">
+    <div class="row">
+      <!--Left Sidebar-->
+      <div class="col-md-3 md-margin-bottom-40">
+        <div class="panel-heading-v2 overflow-h">
+          <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Task Progress</h2>
+          <a href="#"><i class="fa fa-cog pull-right"></i></a>
+        </div>
+        <h3 class="heading-xs">Web Design <span class="pull-right">92%</span></h3>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        <div class="progress progress-u progress-xxs">
+          <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+          </div>
+        </div>
+        <h3 class="heading-xs">Unify Project <span class="pull-right">85%</span></h3>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+        <div class="progress progress-u progress-xxs">
+          <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" class="progress-bar progress-bar-blue">
+          </div>
+        </div>
+        <h3 class="heading-xs">Sony Corporation <span class="pull-right">64%</span></h3>
+
+        <div class="progress progress-u progress-xxs margin-bottom-40">
+          <div style="width: 64%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="64" role="progressbar" class="progress-bar progress-bar-dark">
+          </div>
+        </div>
+      </div>
+      <!--End Left Sidebar-->
+
+      <div class="col-md-9">
+        <!--Profile Body-->
+        <div class="profile-body margin-bottom-20">
+          <div class="tab-v1">
+            <ul class="nav nav-justified nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#profile">Uppgifter</a></li>
+              <li><a data-toggle="tab" href="#passwordTab">Byta lösenord</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="profile" class="profile-edit tab-pane fade in active">
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), method: :patch,
+                                    html: {class: "form-horizontal form-user"},
+                                    wrapper: :with_devise) do |f| %>
+                    <p class="notice"><%= notice %></p>
+                    <p class="alert"><%= alert %></p>
+                    <%= devise_error_messages! %>
+                    <%= f.input :firstname %>
+                    <%= f.input :lastname %>
+                    <%= f.input :phone %>
+
+                    <div class="form-group">
+                      <div class="col-md-offset-4 col-md-8">
+                        <%= f.button :submit, t('devise.update'), class: 'btn btn-primary' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+
+              <div id="passwordTab" class="profile-edit tab-pane fade">
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+                                    html: {class: "form-horizontal form-user"},
+                                    wrapper: :with_devise) do |f| %>
+                    <%= devise_error_messages! %>
+                    <%= f.input :email, readonly: true %>
+                    <%= f.input :password %>
+                    <%= f.input :password_confirmation %>
+                    <%= f.input :current_password %>
+
+                    <div class="form-group">
+                      <div class="col-md-offset-4 col-md-8">
+                        <%= f.button :submit, t('devise.update'), class: 'btn btn-primary' %>
+                      </div>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End Profile Body-->
+      </div>
+    </div>
+    <!--/end row-->
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+  <!--/container-->
+  <!--=== End Profile ===-->
+</div>

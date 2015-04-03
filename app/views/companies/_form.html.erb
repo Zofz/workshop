@@ -1,0 +1,13 @@
+<%= simple_form_for(@company, html: {class: 'form-horizontal form-company'}) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :title %>
+      <%= f.input :org_nbr %>
+      <%= f.input :comment %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

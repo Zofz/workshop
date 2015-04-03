@@ -1,7 +1,8 @@
 class CreateMachineTypes < ActiveRecord::Migration
   def change
     create_table :machine_types do |t|
-      t.references :machine, index: true
+      t.string :title
+      t.text :comment
 
       t.timestamps
     end

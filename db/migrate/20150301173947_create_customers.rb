@@ -7,9 +7,7 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.string :old_id
-      t.boolean :company
-      t.string :company_name
-      t.string :org_nbr
+      t.integer :company_id
       t.text :comment
 
       t.timestamps

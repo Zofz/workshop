@@ -5,7 +5,9 @@ FactoryGirl.define do
     cellphone
     phone
     email
-
+    after(:create) do |customer|
+      create(:address,customer: customer)
+    end
     trait :w_company do
       company true
       company_name
