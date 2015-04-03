@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-#gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'binding_of_caller'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
 gem 'bootstrap-sass-extras'
 gem 'bundler'
 gem 'cancancan'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 gem 'devise', github: 'plataformatec/devise'
 gem 'delayed_job_active_record'
 gem 'font-awesome-rails'

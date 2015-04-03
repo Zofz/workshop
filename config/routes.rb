@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :machines, path: :maskiner
 
     resources :roles
+    resources :work_types, path: :arbetstyper
   end
 
   # You can have the root of your site routed with "root"

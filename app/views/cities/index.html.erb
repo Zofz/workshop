@@ -1,2 +1,28 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Ort</th>
+          <th>Postort</th>
+          <th>Postnummer</th>
+          <th>Redigera</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @cities.each do |city| %>
+            <tr>
+              <td><%= city.id %></td>
+              <td><%= city.title %></td>
+              <td><%= city.postal_title %></td>
+              <td><%= city.postal_code %></td>
+              <td><%= link_to('Redigera', edit_city_path(city)) %></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

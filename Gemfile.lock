@@ -295,7 +295,7 @@ DEPENDENCIES
   bundler
   cancancan
   codeclimate-test-reporter
-  coffee-rails (~> 4.1.0)
+  coffee-rails
   cucumber-rails
   database_cleaner
   delayed_job_active_record
