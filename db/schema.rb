@@ -31,9 +31,15 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "addresses", ["customer_id"], name: "index_addresses_on_customer_id", using: :btree
 
   create_table "brands", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.string   "short"
+    t.string   "url"
+    t.string   "reseller_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "brands", ["title"], name: "index_brands_on_title", using: :btree
 
   create_table "brands_machine_types", force: :cascade do |t|
     t.integer "brand_id"
@@ -50,6 +56,8 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "cities", ["postal_code"], name: "index_cities_on_postal_code", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.string   "title"
@@ -113,7 +121,8 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "machine_models", ["machine_type_id"], name: "index_machine_models_on_machine_type_id", using: :btree
 
   create_table "machine_types", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",      null: false
+    t.string   "short"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"

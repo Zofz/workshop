@@ -9,16 +9,4 @@ class Machine < ActiveRecord::Base
   has_many :parts_used, class_name: :Part, foreign_key: :part_id, through: :works
   has_many :parts, through: :product
 
-  def self.new_path(customer, *)
-    if customer.present?
-      Rails.application.routes.url_helpers.new_machine_path(customer)
-    else
-      Rails.application.routes.url_helpers.new_machine_path
-    end
-
-  end
-
-  def self.index_path
-    Rails.application.routes.url_helpers.machines_path
-  end
 end

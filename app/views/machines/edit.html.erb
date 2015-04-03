@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 reg-page">
+      <%= label_tag("Redigera kund",nil, class: 'reg-header')%>
+      <%= render 'form'%>
+      <hr>
+      <%= link_to(fa_icon('trash-o') + " Förinta", @customer, method: :delete, data: {confirm: "Är du säker?"}, class: "btn-u btn-u-small")%>
+      <%= link_to(fa_icon('users') + ' Visa alla kunder', customers_path,class:"btn-u btn-u-small")%>
+      <%= link_to(fa_icon('arrow-left') + ' Tillbaka till start', root_url,class:"btn-u btn-u-small")%>
+    </div>
+  </div>
+</div>
