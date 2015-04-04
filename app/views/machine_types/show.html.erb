@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @machine_type.title %>
+</p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @machine_type.short %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @machine_type.comment %>
+</p>
+
+<%= link_to 'Edit', edit_machine_type_path(@machine_type) %> |
+<%= link_to 'Back', machine_types_path %>

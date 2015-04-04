@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :users, path: :anvandare, controllers: {
+  resources :machine_models
+  resources :machine_types
+  resources :brands
+  resources :products
+  devise_for :users, controllers: {
                        sessions: 'users/sessions',
                        registrations: 'users/registrations'
                    }
+  resource :user, path: :anvandare
+
+
 
   # Scope to change urls to swedish
   scope path_names: {new: 'ny', edit: 'redigera'} do

@@ -1,5 +1,5 @@
 class MachineModel < ActiveRecord::Base
-
+  # T.ex. Husqvarna 305
   belongs_to :brand
   belongs_to :machine_type
   has_many :products

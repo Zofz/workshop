@@ -1,0 +1,12 @@
+<%= simple_form_for(@machine_model) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :brand, collection: Brand.all %>
+    <%= f.association :machine_type, collection: MachineType.all %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

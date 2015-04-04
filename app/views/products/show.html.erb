@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Machine model:</strong>
+  <%= @product.machine_model %>
+</p>
+
+<p>
+  <strong>Product nbr:</strong>
+  <%= @product.product_nbr %>
+</p>
+
+<p>
+  <strong>Order nbr:</strong>
+  <%= @product.order_nbr %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

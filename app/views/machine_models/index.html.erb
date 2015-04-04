@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Machine Models</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @machine_models.each do |machine_model| %>
+      <tr>
+        <td><%= link_to 'Show', machine_model %></td>
+        <td><%= link_to 'Edit', edit_machine_model_path(machine_model) %></td>
+        <td><%= link_to 'Destroy', machine_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Machine model', new_machine_model_path %>
