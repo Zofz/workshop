@@ -1,0 +1,7 @@
+sv:
+  activerecord:
+    models:
+      storage_spot:
+        one: Förvaringsplats
+        other: Förvaringsplatser
+

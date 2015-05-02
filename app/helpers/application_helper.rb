@@ -4,18 +4,6 @@ module ApplicationHelper
     content_tag :i, nil, class: ('fa fa-' + icon_name)
   end
 
-  def model_name(model)
-    if model.instance_of?(Class)
-      model.model_name.human
-    end
-  end
-
-  def models_name(model)
-    if model.instance_of?(Class)
-      return model.model_name.human(count: 2)
-    end
-  end
-
   def title(page_title)
     content_for(:title) { page_title }
   end

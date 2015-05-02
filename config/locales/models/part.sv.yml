@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      part:
+        one: Del
+        other: Delar

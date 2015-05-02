@@ -2,9 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :short %>
-    <%= f.input :comment %>
+    <%= render 'fields', var: f%>
   </div>
 
   <div class="form-actions">

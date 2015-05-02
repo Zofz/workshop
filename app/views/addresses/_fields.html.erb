@@ -1,0 +1,6 @@
+<div class='nested-fields'>
+  <%= f.input :city_id, collection: City.all, label_method: :to_s %>
+  <%= f.input :street %>
+  <%= f.input :comment %>
+  <%= link_to(t('new.city'), new_city_path, target: '_blank') %>
+</div>

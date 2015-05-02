@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      brand:
+        one: Märke
+        other: Märken

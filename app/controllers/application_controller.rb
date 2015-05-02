@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :set_locale
+  helper_method [:model_name, :models_name, :success_create, :success_update]
 
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordInvalid do |ex|
     flash[:alert] =
-        "Fel i formulär:  #{ex.record.errors.full_messages.join '; '}"
+      "Fel i formulär:  #{ex.record.errors.full_messages.join '; '}"
     render referring_action, status: :unprocessable_entity
   end
 
@@ -23,6 +24,31 @@ class ApplicationController < ActionController::Base
     fail ActionController::RoutingError.new 'not found'
   end
 
+  add_breadcrumb :root, 'Hem'
+
+  def model_name(model)
+    if model.instance_of?(Class)
+      model.model_name.human
+    end
+  end
+
+  def models_name(model)
+    if model.instance_of?(Class)
+      return model.model_name.human(count: 2)
+    end
+  end
+
+  def success_create(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_create)}.)
+    end
+  end
+
+  def success_update(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_update)}.)
+    end
+  end
 
   private
 
@@ -55,5 +81,4 @@ class ApplicationController < ActionController::Base
     I18n.locale = locale
     redirect_to(:back) if params[:locale]
   end
-
 end

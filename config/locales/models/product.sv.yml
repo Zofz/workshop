@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      product:
+        one: Produkt
+        other: Produkter

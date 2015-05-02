@@ -1,0 +1,7 @@
+sv:
+  activerecord:
+    models:
+      work_type:
+        one: Arbetstyp
+        other: Arbetstyper
+

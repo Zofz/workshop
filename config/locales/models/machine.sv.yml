@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      machine:
+        one: Maskin
+        other: Maskiner

@@ -1,6 +1,7 @@
 # encoding:UTF-8
 class MachinesController < ApplicationController
   load_and_authorize_resource
+  load_and_authorize_resource :customer, parent: true
 
 
   def index
@@ -16,34 +17,21 @@ class MachinesController < ApplicationController
   end
 
   def create
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_create)}) }
-        format.js
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = %(#{model_name(Machine)} #{t(:success_create)}) if @machine.save
+    redirect_to @machine
   end
 
   def update
-    respond_to do |format|
-      if @customer.update(customer_params)
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_updated)}) }
-      else
-        format.html { render action: 'edit' }
-        format.js
-      end
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer), notice: %(#{model_name(Customer)} #{t(:success_updated)})
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @customer.destroy
-    respond_to do |format|
-      format.html { redirect_to :customers, notice: %(#{t(:customer)} #{t(:success_destroyed)}) }
-      format.js
-    end
+    redirect_to :customers, notice: %(#{t(:customer)} #{t(:success_destroyed)})
   end
 
   private

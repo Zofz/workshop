@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>Brand</th>
+      <th>Machine Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,9 +14,10 @@
   <tbody>
     <% @machine_models.each do |machine_model| %>
       <tr>
+        <td><%= machine_model.brand %></td>
+        <td><%= machine_model.machine_type %></td>
         <td><%= link_to 'Show', machine_model %></td>
         <td><%= link_to 'Edit', edit_machine_model_path(machine_model) %></td>
-        <td><%= link_to 'Destroy', machine_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

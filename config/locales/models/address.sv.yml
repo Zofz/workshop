@@ -1,0 +1,11 @@
+sv:
+  activerecord:
+    models:
+      address:
+        one: Adress
+        other: Adresser
+    attributes:
+      address:
+        street: Gata
+        comment: Kommentar
+        city: Ort

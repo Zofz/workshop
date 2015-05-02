@@ -5,11 +5,11 @@ class CustomersController < ApplicationController
 
   def index
   end
+
   def show
   end
 
   def new
-    @companies = Company.all
   end
 
   def edit
@@ -18,10 +18,10 @@ class CustomersController < ApplicationController
   def create
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_create)}) }
+        format.html { redirect_to @customer, success: success_create(Customer) }
         format.js
       else
-        format.html { render action: 'new' }
+        format.html { render action: :new }
       end
     end
   end
@@ -29,9 +29,9 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_updated)}) }
+        format.html { redirect_to @customer, success: success_update(Customer) }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: :edit }
         format.js
       end
     end

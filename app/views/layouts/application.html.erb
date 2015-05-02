@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <head>
-  <title>Verkstad | Gräsklipparservice</title>
-  <%= favicon_link_tag('favicon.ico')%>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <!-- Meta -->
-  <meta charset="utf-8">
+<title>Verkstad | Gräsklipparservice</title>
+<%= favicon_link_tag('favicon.ico')%>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- Meta -->
+<meta charset="utf-8">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
 <div class="wrapper">
-  <!--=== Header ===-->
-  <div class="header">
-    <!-- Navbar -->
-    <div class="navbar navbar-default mega-menu" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="fa fa-bars"></span>
-          </button>
-          <%link_to(:root) do %>
-            <=%image_tag('logo.png', class: "logo-header")%>
+<!--=== Header ===-->
+<div class="header">
+<!-- Navbar -->
+<div class="navbar navbar-default mega-menu" role="navigation">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="fa fa-bars"></span>
+</button>
+<%link_to(:root) do %>
+  <=%image_tag('logo.png', class: "logo-header")%>
           <%end%>
-        </div>
-        <%=render 'elements/menu'%>
+</div>
+<%=render 'elements/menu'%>
+</div>
+</div>
+<!-- End Navbar -->
+</div>
+<!--=== End Header ===-->
+
+<!--=== Breadcrumbs ===-->
+<%= render_breadcrumbs %>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part ===-->
+<div class="container content">
+  <%= bootstrap_flash %>
+  <%= yield %>
+</div><!--/container-->
+<!--=== End Content Part ===-->
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+        2015 &copy; <%=link_to('David Wessman','http://github.com/davidwessman', style: 'color: #2a9a2b')%>
+      </p>
       </div>
     </div>
-    <!-- End Navbar -->
   </div>
-  <!--=== End Header ===-->
-
-  <!--=== Breadcrumbs ===-->
-  <%render 'elements/breadcrumbs'%>
-  <!--=== End Breadcrumbs ===-->
-
-  <!--=== Content Part ===-->
-  <div class="container content">
-        <%= yield %>
-  </div><!--/container-->
-  <!--=== End Content Part ===-->
-    <div class="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p>
-              2015 &copy; <%=link_to('David Wessman','http://github.com/davidwessman', style: 'color: #2a9a2b')%>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div><!--/copyright-->
+</div><!--/copyright-->
 </div><!--/wrapper-->
 </body>
 </html>

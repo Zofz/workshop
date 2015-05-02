@@ -8,4 +8,10 @@ class Customer < ActiveRecord::Base
   has_many :addresses
   has_many :works, through: :machines
   has_many :storages, through: :works
+
+  validates :name, presence: true
+
+  def to_s
+    %(#{name} #{lastname})
+  end
 end

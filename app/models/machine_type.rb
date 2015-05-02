@@ -8,4 +8,8 @@ class MachineType < ActiveRecord::Base
 
   validates :title, :short, presence: true
   validates :short, uniqueness: true
+
+  def to_s
+    title
+  end
 end

@@ -1,0 +1,16 @@
+sv:
+  activerecord:
+    models:
+      customer:
+        one: Kund
+        other: Kunder
+    attributes:
+      customer:
+        name: Förnamn
+        lastname: Efternamn
+        cellphone: Mobil
+        phone: Telefon
+        email: E-post
+        old_id: Gammalt kundnummer
+        company: Företag
+        comment: Kommentar

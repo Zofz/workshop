@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      work:
+        one: Arbete
+        other: Arbeten

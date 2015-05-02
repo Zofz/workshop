@@ -1,32 +1,28 @@
-<div class ="container">
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table">
-        <thead>
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Namn</th>
+        <th>Efternamn</th>
+        <th>Telefon</th>
+        <th>Mobil</th>
+        <th>Epost</th>
+        <th>Redigera</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
         <tr>
-          <th>#</th>
-          <th>Namn</th>
-          <th>Efternamn</th>
-          <th>Telefon</th>
-          <th>Mobil</th>
-          <th>Epost</th>
-          <th>Redigera</th>
+          <td><%= customer.id %></td>
+          <td><%= customer.name %></td>
+          <td><%= customer.lastname %></td>
+          <td><%= customer.phone %></td>
+          <td><%= customer.cellphone %></td>
+          <td><%= customer.email %></td>
+          <td><%=link_to('Redigera',edit_customer_path(customer))%></td>
         </tr>
-        </thead>
-        <tbody>
-        <% @customers.each do |customer| %>
-            <tr>
-              <td><%= customer.id %></td>
-              <td><%= customer.name %></td>
-              <td><%= customer.lastname %></td>
-              <td><%= customer.phone %></td>
-              <td><%= customer.cellphone %></td>
-              <td><%= customer.email %></td>
-              <td><%=link_to('Redigera',edit_customer_path(customer))%></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
 </div>

@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      drive:
+        one: Körning
+        other: Körningar
