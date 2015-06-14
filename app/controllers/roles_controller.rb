@@ -1,4 +1,5 @@
-class RolesController < InheritedResources::Base
+# encoding: UTF-8
+class RolesController < ApplicationController
   load_and_authorize_resource
 
   private

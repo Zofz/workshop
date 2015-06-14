@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :machine_type do
-    machine nil
+    title
+    short
   end
 end

@@ -8,7 +8,6 @@ class CreateWorks < ActiveRecord::Migration
       t.boolean :finished
       t.boolean :invoiced
       t.string :invoice_nbr
-      t.references :user, index: true
 
       t.timestamps
     end

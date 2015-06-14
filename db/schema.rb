@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.integer  "customer_id"
     t.integer  "company_id"
     t.integer  "city_id"
+    t.integer  "user_id"
     t.string   "street"
     t.string   "comment"
     t.datetime "created_at"
@@ -310,7 +311,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
-  create_table "work_activity", force: :cascade do |t|
+  create_table "work_activities", force: :cascade do |t|
     t.integer  "work_id"
     t.integer  "work_type_id"
     t.integer  "user_id"
@@ -321,9 +322,9 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.datetime "updated_at"
   end
 
-  add_index "work_activity", ["user_id"], name: "index_work_activity_on_user_id", using: :btree
-  add_index "work_activity", ["work_id"], name: "index_work_activity_on_work_id", using: :btree
-  add_index "work_activity", ["work_type_id"], name: "index_work_activity_on_work_type_id", using: :btree
+  add_index "work_activities", ["user_id"], name: "index_work_activities_on_user_id", using: :btree
+  add_index "work_activities", ["work_id"], name: "index_work_activities_on_work_id", using: :btree
+  add_index "work_activities", ["work_type_id"], name: "index_work_activities_on_work_type_id", using: :btree
 
   create_table "work_parts", force: :cascade do |t|
     t.integer  "part_id"
@@ -351,12 +352,10 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.boolean  "finished"
     t.boolean  "invoiced"
     t.string   "invoice_nbr"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "works", ["machine_id"], name: "index_works_on_machine_id", using: :btree
-  add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree
 
 end

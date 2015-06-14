@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :role do
-    name "MyString"
-description "MyString"
+    title
+    description
   end
 
 end

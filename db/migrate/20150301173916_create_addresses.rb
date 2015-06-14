@@ -4,6 +4,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.references :customer, index: true
       t.references :company, index: true
       t.references :city, index: true
+      t.references :user
       t.string :street
       t.string :comment
 

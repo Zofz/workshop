@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :product do
     brand
     machine_type
-    product_number
-    order_number
+    product_nbr
+    order_nbr
   end
 end
