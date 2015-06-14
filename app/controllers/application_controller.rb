@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     fail ActionController::RoutingError.new 'not found'
   end
 
-  add_breadcrumb :root, 'Hem'
+  add_breadcrumb :root, "Hem"
 
   def model_name(model)
     if model.instance_of?(Class)
