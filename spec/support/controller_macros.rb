@@ -8,7 +8,7 @@ module ControllerMacros
     end
   end
 
-  def allow_user_to *args
+  def allow_user_to(*args)
     before(:each) do
       @ability.can(*args)
     end
