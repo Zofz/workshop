@@ -308,6 +308,7 @@ DEPENDENCIES
   bootstrap-sass-extras
   bundler
   cancancan
+  capybara
   cocoon
   codeclimate-test-reporter
   coffee-rails

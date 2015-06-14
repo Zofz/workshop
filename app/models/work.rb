@@ -8,5 +8,5 @@ class Work < ActiveRecord::Base
   has_many :drives
   has_one :storage
 
-  validate :machine, presence: true
+  validates :machine, presence: true
 end
