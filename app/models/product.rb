@@ -3,6 +3,6 @@ class Product < ActiveRecord::Base
   belongs_to :machine_type
   belongs_to :brand
 
-  validates :brand, :machine_type, :product_nbr,
+  validates :brand_id, :machine_type_id, :product_nbr,
     presence: true
 end

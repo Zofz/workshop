@@ -2,29 +2,15 @@ require "rails_helper"
 
 RSpec.describe MachineType, type: :model do
   it "has a valid factory" do
-    (build(:machine_type)).should be_valid
+    expect(build(:machine_type)).to be_valid
   end
 
-  subject(:type) { create(:machine_type) }
-
-  describe 'ActiveModel validations' do
-    it { should validate_presence_of(:customer) }
-    it { should validate_presence_of(:machine_model) }
+  describe "validations" do
+    it { is_expected.to validate_presence_of(:title) }
   end
 
-  describe "ActiveRecord associations" do
-    it { should belong_to(:customer) }
-    it { should belong_to(:machine_model) }
-    it { should have_many(:works) }
-  end
-
-  describe "public instance methods" do
-    context "responds to its methods" do
-      #it { should respond_to(:send_email) }
-    end
-
-    context "executes methods correctly" do
-
-    end
+  describe "associations" do
+    it { is_expected.to have_many(:products) }
+    it { is_expected.to have_many(:brands) }
   end
 end

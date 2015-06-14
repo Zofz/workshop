@@ -56,6 +56,35 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  protected
+
+  def self.permission
+    name.gsub('Controller', '').singularize.split('::').last.constantize.name rescue nil
+  end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_user)
+  end
+
+  # load the permissions for the current user so that UI can be manipulated
+  def load_permissions
+    return unless current_user
+    @current_permissions = current_user.posts.each do |post|
+      post.permissions.map { |i| [i.subject_class, i.action] }
+    end
+  end
+
+  # Enables authentication and
+  def self.load_permissions_and_authorize_resource(*args)
+    load_and_authorize_resource(*args)
+    before_action(:load_permissions, *args)
+  end
+
+  def self.skip_authorization(*args)
+    skip_authorization_check(*args)
+    skip_before_filter(:load_permissions, *args)
+  end
+
   private
 
   def require_user_signed_in
@@ -86,5 +115,9 @@ class ApplicationController < ActionController::Base
     end
     I18n.locale = locale
     redirect_to(:back) if params[:locale]
+  end
+
+  def referring_action
+    Rails.application.routes.recognize_path(request.referer)[:action]
   end
 end

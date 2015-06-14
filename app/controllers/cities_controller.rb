@@ -11,7 +11,7 @@ class CitiesController < ApplicationController
   end
 
   def create
-    if @city.save
+    if @city.save!
       redirect_to city_path(@city)
     else
       render :new, notice: alert_create(City)
@@ -19,7 +19,7 @@ class CitiesController < ApplicationController
   end
 
   def update
-    if @city.update(company_params)
+    if @city.update!(city_params)
       redirect_to city_path(@city), notice: alert_update(City)
     else
       render :edit
@@ -27,7 +27,7 @@ class CitiesController < ApplicationController
   end
 
   def destroy
-    @city.destroy
+    @city.destroy!
     redirect_to City, notice: alert_destroy(City)
   end
 

@@ -15,14 +15,14 @@ class WorkTypesController < ApplicationController
 
   def create
     if @work_type.save
-      redirect_to work_type_path(@work_path), notice: alert_create(WorkType)
+      redirect_to work_type_path(@work_type), notice: alert_create(WorkType)
     else
       render :new
     end
   end
 
   def update
-    if @work_type.update(company_params)
+    if @work_type.update(work_type_params)
       redirect_to work_type_path(@work_type), notice: alert_update(WorkType)
     else
       render :edit
@@ -30,8 +30,11 @@ class WorkTypesController < ApplicationController
   end
 
   def destroy
-    @work_type.destroy
-    redirect_to WorkType, notice: alert_destroy(WorkType)
+    if @work_type.destroy!
+      redirect_to WorkType, notice: alert_destroy(WorkType)
+    else
+      render :new
+    end
   end
 
   private

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403093142) do
+ActiveRecord::Schema.define(version: 20150614174413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,6 +214,24 @@ ActiveRecord::Schema.define(version: 20150403093142) do
 
   add_index "parts_work_types", ["part_id"], name: "index_parts_work_types_on_part_id", using: :btree
   add_index "parts_work_types", ["work_type_id"], name: "index_parts_work_types_on_work_type_id", using: :btree
+
+  create_table "permission_roles", force: :cascade do |t|
+    t.integer  "permission_id"
+    t.integer  "role_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "permission_roles", ["permission_id"], name: "index_permission_roles_on_permission_id", using: :btree
+  add_index "permission_roles", ["role_id"], name: "index_permission_roles_on_role_id", using: :btree
+
+  create_table "permissions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "subject_class"
+    t.string   "action"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.integer  "brand_id"

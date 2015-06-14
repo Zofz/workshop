@@ -4,7 +4,7 @@ class Customer < ActiveRecord::Base
   belongs_to :company
 
   has_many :machines
-  has_many :machine_models, through: :machines
+  has_many :products, through: :machines
   has_many :addresses
   has_many :works, through: :machines
   has_many :storages, through: :works
