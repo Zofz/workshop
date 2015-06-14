@@ -29,7 +29,6 @@ RSpec.configure do |config|
     FactoryGirl.create *args
   end
 
-
   # Database cleaning
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)

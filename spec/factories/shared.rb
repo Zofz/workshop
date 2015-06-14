@@ -14,7 +14,6 @@ FactoryGirl.define do
   sequence(:password) { |n| "12030283sds#{n}" }
   sequence(:location) { ['MH:A', 'Hilbert', 'Kårhuset', 'Ön-ön', 'Sjönsjön', 'Bastun'].sample }
 
-
   sequence(:company_name) { |n| "Cooling#{n} AB" }
   sequence(:org_nbr) { |n| "192623#{n}323" }
 
@@ -38,5 +37,4 @@ FactoryGirl.define do
   sequence(:spot_nbr) { |n| "Spot nr.#{n}" }
 
   sequence(:description) { |n| "En fin liten beskrivande text av en #{n}" }
-
 end

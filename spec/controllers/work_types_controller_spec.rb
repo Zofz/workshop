@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe WorkTypesController, type: :controller do
   let(:work_type) { create(:work_type) }
@@ -10,65 +10,65 @@ describe WorkTypesController, type: :controller do
     allow_user_to :manage, WorkType
   end
 
-  describe 'GET #index' do
-    it 'assigns all work_types as @work_types' do
+  describe "GET #index" do
+    it "assigns all work_types as @work_types" do
       get :index, {}
 
       expect(assigns(:work_types)).to eq([work_type])
     end
   end
 
-  describe 'GET #show' do
-    it 'assigns the requested work_type as @work_type' do
+  describe "GET #show" do
+    it "assigns the requested work_type as @work_type" do
       get :show, { id: work_type.to_param }
 
       expect(assigns(:work_type)).to eq(work_type)
     end
   end
 
-  describe 'GET #new' do
-    it 'assigns a new work_type as @work_type' do
+  describe "GET #new" do
+    it "assigns a new work_type as @work_type" do
       get :new, {}
       expect(assigns(:work_type)).to be_a_new(WorkType)
     end
   end
 
-  describe 'GET #edit' do
-    it 'assigns the requested work_type as @work_type' do
+  describe "GET #edit" do
+    it "assigns the requested work_type as @work_type" do
       get :edit, { id: work_type.to_param }
       expect(assigns(:work_type)).to eq(work_type)
     end
   end
 
-  describe 'POST #create' do
-    context 'with valid params' do
-      it 'creates a new WorkType' do
+  describe "POST #create" do
+    context "with valid params" do
+      it "creates a new WorkType" do
         expect {
           post :create, { work_type: valid_attributes }
         }.to change(WorkType, :count).by(1)
       end
 
-      it 'assigns a newly created work_type as @work_type' do
+      it "assigns a newly created work_type as @work_type" do
         post :create, { work_type: valid_attributes }
         expect(assigns(:work_type)).to be_a(WorkType)
         expect(assigns(:work_type)).to be_persisted
       end
 
-      it 'redirects to the created work_type' do
+      it "redirects to the created work_type" do
         post :create, { work_type: valid_attributes }
         expect(response).to redirect_to(WorkType.last)
       end
     end
 
-    context 'with invalid params' do
-      it 'assigns a newly created but unsaved work_type as @work_type' do
+    context "with invalid params" do
+      it "assigns a newly created but unsaved work_type as @work_type" do
         post :create, { work_type: invalid_attributes }
         expect(assigns(:work_type)).to be_a_new(WorkType)
       end
 
-      it 're-renders the "new" template' do
+      it "re-renders the 'new' template" do
         post :create, { work_type: invalid_attributes }
-        expect(response).to render_template('new')
+        expect(response).to render_template("new")
       end
     end
   end
