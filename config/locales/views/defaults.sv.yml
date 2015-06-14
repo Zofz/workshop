@@ -1,6 +1,15 @@
 sv:
-  new:
-    customer: Ny Kund
-  back:
-    start: Tillbaka till startsidan
+  new: Ny %{attribute}
+  index: Alla %{attribute}
+  back: Tillbaka till %{attr}
+  remove: Ta bort %{attribute}
+  select: Välj %{attribute}
+
+  constants: Konstanter
+  sign_out: Logga ut
+  sign_in: Logga in
+  show: Visa
+  edit: Redigera
+  destroy: Radera
+  confirm_destroy: Är du säker på att du vill radera?
 

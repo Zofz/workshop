@@ -16,14 +16,12 @@
 *= require theme
 *= require blocks
 *= require header
+*= require bootstrap-datetimepicker
 *= require_self
 */
 @import "bootstrap_configuration";
-
 @import "bootstrap-sprockets";
-
 @import "bootstrap";
-
 @import "font-awesome";
 
 //->Prelang (ui_framework:twitter_bootstrap)

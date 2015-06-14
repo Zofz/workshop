@@ -8,4 +8,4 @@ sv:
       address:
         street: Gata
         comment: Kommentar
-        city: Ort
+        city_id: Ort

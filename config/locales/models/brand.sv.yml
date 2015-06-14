@@ -4,3 +4,9 @@ sv:
       brand:
         one: Märke
         other: Märken
+    attributes:
+      brand:
+        title: Titel
+        short: Kortnamn (endast a-z)
+        url: Hemsida
+        reseller_url: Hemsida återförsäljare

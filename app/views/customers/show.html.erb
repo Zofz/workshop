@@ -1,23 +1,22 @@
-
 <%= render @customer %>
 
-<p id="notice"><%= notice %></p>
+<p id='notice'><%= notice %></p>
 
 <p>
-  <strong>Namn</strong>
-  <%= %(#{@customer.name} #{@customer.lastname}) %>
+<strong>Namn</strong>
+<%= @customer %>
 </p>
 <p>
-  <strong>Phone:</strong>
-  <%= %(#{@customer.phone} #{@customer.cellphone}) %>
+<strong>Phone:</strong>
+<%= %(#{@customer.phone} #{@customer.cellphone}) %>
 </p>
 <% if @customer.machines.count > 0 %>
-    <ul class="list">
-      <% for machine in @customer.machines do %>
-          <li><%= link_to(machine,machine)%></li>
-      <% end %>
-    </ul>
+  <ul class='list'>
+    <% for machine in @customer.machines do %>
+      <li><%= link_to(machine,machine)%></li>
+    <% end %>
+  </ul>
 <%end%>
-    <%= link_to 'Ny Maskin', new_customer_machine_path(@customer) %> |
-    <%= link_to 'Edit', edit_customer_path(@customer) %> |
-    <%= link_to 'Back', customers_path %>
+<%= link_to 'Ny Maskin', new_customer_machine_path(@customer) %> |
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

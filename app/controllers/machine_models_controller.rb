@@ -14,13 +14,16 @@ class MachineModelsController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Machine model was successfully created.' if @machine_model.save
-    redirect_to @machine_model
+    if @machine_model.save
+      redirect_to machine_model_path(@machine_model), notice: alert_create(MachineModel)
+    else
+      render :new
+    end
   end
 
   def update
     if @machine_model.update(machine_model_params)
-      redirect_to @machine_model, notice: 'Machine model was successfully updated.'
+      redirect_to machine_model_path(@machine_model), notice: alert_update(MachineModel)
     else
       render :edit
     end
@@ -28,7 +31,7 @@ class MachineModelsController < ApplicationController
 
   def destroy
     @machine_model.destroy
-      redirect_to machine_models_url, notice: 'Machine model was successfully destroyed.'
+    redirect_to machine_models_url, notice: alert_destroy(MachineModel)
   end
 
   private

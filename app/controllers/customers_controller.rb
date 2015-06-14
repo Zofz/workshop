@@ -2,7 +2,6 @@
 class CustomersController < ApplicationController
   load_and_authorize_resource
 
-
   def index
   end
 
@@ -10,44 +9,38 @@ class CustomersController < ApplicationController
   end
 
   def new
+    @customer.addresses.build
   end
 
   def edit
   end
 
   def create
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to @customer, success: success_create(Customer) }
-        format.js
-      else
-        format.html { render action: :new }
-      end
+    if @customer.save
+      redirect_to edit_customer_path(@customer), success: alert_create(Customer)
+    else
+      render action: :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @customer.update(customer_params)
-        format.html { redirect_to @customer, success: success_update(Customer) }
-      else
-        format.html { render action: :edit }
-        format.js
-      end
+    if @customer.update(customer_params)
+      redirect_to edit_customer_path(@customer), success: alert_update(Customer)
+    else
+      render action: :edit
     end
   end
 
   def destroy
     @customer.destroy
-    respond_to do |format|
-      format.html { redirect_to :customers, notice: %(#{t(:customer)} #{t(:success_destroyed)}) }
-      format.js
-    end
+    redirect_to :customers, notice: alert_destroy(Customer)
   end
 
   private
 
   def customer_params
-    params.require(:customer).permit(:name, :lastname, :cellphone, :phone, :email, :old_id, :company_id, :comment)
+    params.require(:customer).permit(:firstname, :lastname, :cellphone,
+                                     :phone, :email, :old_id, :company_id, :comment,
+                                     { addresses_attributes: [:id, :_destroy, :city_id, :street, :comment] })
   end
 end

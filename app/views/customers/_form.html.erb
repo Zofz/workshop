@@ -1,4 +1,5 @@
 <%= simple_form_for(@customer, html: {class: 'form-horizontal form-company'}) do |f| %>
+  <%= f.error_notification %>
   <ul class='nav nav-tabs' role='tablist'>
     <li class='active'>
       <%= link_to('Kunduppgifter','#info', aria: { controls: 'info' }, role: 'tab', data: { toggle: 'tab' }) %>
@@ -8,9 +9,9 @@
     </li>
   </ul>
   <div class='tab-content'>
-    <div id='info' class='tab-pane active' role='tabpanel'>
-      <div class="form-inputs">
-        <%= f.input :name, autofocus: true %>
+    <div id='info' class='tab-pane col-md-12 active' role='tabpanel'>
+      <div class='form-inputs'>
+        <%= f.input :firstname, autofocus: true %>
         <%= f.input :lastname %>
         <%= f.input :phone %>
         <%= f.input :cellphone %>
@@ -19,21 +20,19 @@
         <%= f.association :company, collection: Company.all %>
       </div>
     </div>
-    <div id='addresses' class='tab-pane' role='tabpanel'>
+    <div id='addresses' class='tab-pane col-md-12' role='tabpanel'>
       <%= f.simple_fields_for :addresses do |address| %>
-        <%= render 'addresses/fields', f: address %>
-        <div class='links'>
-          <%= link_to_add_association 'Lägg till address', f, :addresses %>
-        </div>
+        <%= render 'address_fields', f: address %>
       <%end%>
+      <div class='links'>
+        <%= link_to_add_association 'Lägg till address', f, :addresses %>
+      </div>
     </div>
   </div>
 
-
-  <div class="form-group">
-    <div class="col-md-offset-4 col-md-8">
+  <div class='form-group'>
+    <div class='col-md-offset-4 col-md-8'>
       <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
   </div>
-
 <% end %>

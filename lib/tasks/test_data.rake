@@ -13,7 +13,6 @@ namespace :db do
 
     # WorkTypes
     WorkType.find_or_create_by!(title: 'Autotest')
-    WorkType.find_or_create_by!(title: 'Autotest')
     WorkType.find_or_create_by!(title: 'Byte startsnöre')
     WorkType.find_or_create_by!(title: 'Service')
     WorkType.find_or_create_by!(title: 'Reparation')

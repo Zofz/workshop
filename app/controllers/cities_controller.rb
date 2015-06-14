@@ -11,14 +11,16 @@ class CitiesController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Company was successfully created.' if @city.save
-    redirect_to @city
+    if @city.save
+      redirect_to city_path(@city)
+    else
+      render :new, notice: alert_create(City)
+    end
   end
 
   def update
     if @city.update(company_params)
-      redirect_to @city, notice: 'Company was successfully updated.'
-
+      redirect_to city_path(@city), notice: alert_update(City)
     else
       render :edit
     end
@@ -26,7 +28,7 @@ class CitiesController < ApplicationController
 
   def destroy
     @city.destroy
-    redirect_to City, notice: 'Company was successfully destroyed.'
+    redirect_to City, notice: alert_destroy(City)
   end
 
   private

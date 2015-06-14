@@ -17,26 +17,35 @@ class MachinesController < ApplicationController
   end
 
   def create
-    flash[:notice] = %(#{model_name(Machine)} #{t(:success_create)}) if @machine.save
-    redirect_to @machine
+    if @machine.save
+      redirect_to machine_path(@machine), notice: alert_create(Machine)
+    else
+      render :new
+    end
   end
 
   def update
     if @customer.update(customer_params)
-      redirect_to customer_path(@customer), notice: %(#{model_name(Customer)} #{t(:success_updated)})
+      redirect_to customer_path(@customer), notice: alert_update(Machine)
     else
-      render action: 'edit'
+      render action: :edit
     end
   end
 
   def destroy
     @customer.destroy
-    redirect_to :customers, notice: %(#{t(:customer)} #{t(:success_destroyed)})
+    redirect_to :customers, notice: alert_destroy(Machine)
   end
 
   private
 
+  def machine_params
+    params.require(:machine).permit(:customer_id, :old_id, :serial_nbr, :product_id,
+                                    :manufactured, :engine_nbr, :deck_nbr)
+  end
+
   def customer_params
-    params.require(:customer).permit(:name, :lastname, :cellphone, :phone, :email, :old_id, :company, :company_name, :org_nbr, :comment)
+    params.require(:customer).permit(:firstname, :lastname, :cellphone, :phone,
+                                     :email, :old_id, :comment)
   end
 end

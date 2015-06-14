@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "name"
+    t.string   "firstname"
     t.string   "lastname"
     t.string   "cellphone"
     t.string   "phone"
@@ -215,14 +215,16 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "parts_work_types", ["work_type_id"], name: "index_parts_work_types_on_work_type_id", using: :btree
 
   create_table "products", force: :cascade do |t|
-    t.integer  "machine_model_id"
+    t.integer  "brand_id"
+    t.integer  "machine_type_id"
     t.string   "product_nbr"
     t.string   "order_nbr"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "products", ["machine_model_id"], name: "index_products_on_machine_model_id", using: :btree
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
+  add_index "products", ["machine_type_id"], name: "index_products_on_machine_type_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "title",       null: false

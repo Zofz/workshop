@@ -1,4 +1,9 @@
 <div class='nested-fields'>
   <%= f.input :street %>
+  <%= f.input :city_id, collection: City.all, label_method: :to_s %>
   <%= f.input :comment %>
+  <% unless f.object.new_record? %>
+    <%= link_to_remove_association t('remove', attribute: 'Address'), f, class: 'btn btn-primary btn-xs' %><br>
+  <% end %>
+  <hr>
 </div>

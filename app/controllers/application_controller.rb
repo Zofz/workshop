@@ -38,15 +38,21 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def success_create(model)
+  def alert_create(model)
     if model.instance_of?(Class)
       %(#{model_name(model)} #{t(:success_create)}.)
     end
   end
 
-  def success_update(model)
+  def alert_update(model)
     if model.instance_of?(Class)
       %(#{model_name(model)} #{t(:success_update)}.)
+    end
+  end
+
+  def alert_destroy(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_destroy)}.)
     end
   end
 

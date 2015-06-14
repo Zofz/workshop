@@ -9,9 +9,10 @@ class Customer < ActiveRecord::Base
   has_many :works, through: :machines
   has_many :storages, through: :works
 
-  validates :name, presence: true
+  validates :firstname, presence: true
+  accepts_nested_attributes_for :addresses, allow_destroy: true
 
   def to_s
-    %(#{name} #{lastname})
+    %(#{firstname} #{lastname})
   end
 end

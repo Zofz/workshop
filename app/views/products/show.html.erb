@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Machine model:</strong>
-  <%= @product.machine_model %>
+  <strong>Brand:</strong>
+  <%= @product.brand %>
+</p>
+
+<p>
+  <strong>Machine type:</strong>
+  <%= @product.machine_type %>
 </p>
 
 <p>
@@ -15,5 +20,5 @@
   <%= @product.order_nbr %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t(:edit), edit_product_path(@product) %> |
+<%= link_to t(:back, attr: Product.model_name.human(count: 2).downcase), products_path %>

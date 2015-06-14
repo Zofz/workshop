@@ -14,13 +14,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Product was successfully created.' if @product.save
-    redirect_to @product
+    if @product.save
+      redirect_to product_path(@product), notice: alert_create(Product)
+    else
+      render :new
+    end
   end
 
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.'
+      redirect_to product_path(@product), notice: alert_update(Product)
     else
       render :edit
     end
@@ -28,12 +31,13 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to Product, notice: 'Product was successfully destroyed.'
+    redirect_to products_path, notice: alert_destroy(Product)
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:machine_model, :product_nbr, :order_nbr)
+    params.require(:product).permit(:brand_id, :brand, :machine_type_id,
+                                    :machine_type, :product_nbr, :order_nbr)
   end
 end

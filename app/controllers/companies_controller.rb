@@ -14,14 +14,16 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'Company was successfully created.' if @company.save
-    redirect_to @company
+    if @company.save
+      redirect_to company_path(@company), notice: alert_create(Company)
+    else
+      render :new
+    end
   end
 
   def update
     if @company.update(company_params)
-      redirect_to @company, notice: 'Company was successfully updated.'
-
+      redirect_to company_path(@company), notice: alert_update(Company)
     else
       render :edit
     end
@@ -29,7 +31,7 @@ class CompaniesController < ApplicationController
 
   def destroy
     @company.destroy
-    redirect_to companies_url, notice: 'Company was successfully destroyed.'
+    redirect_to companies_url, notice: alert_destroy(Company)
   end
 
   private

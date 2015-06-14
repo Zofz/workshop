@@ -14,14 +14,16 @@ class WorkTypesController < ApplicationController
   end
 
   def create
-    flash[:notice] = 'WorkType was successfully created.' if @work_type.save
-    redirect_to @work_type
+    if @work_type.save
+      redirect_to work_type_path(@work_path), notice: alert_create(WorkType)
+    else
+      render :new
+    end
   end
 
   def update
     if @work_type.update(company_params)
-      redirect_to @work_type, notice: 'WorkType was successfully updated.'
-
+      redirect_to work_type_path(@work_type), notice: alert_update(WorkType)
     else
       render :edit
     end
@@ -29,7 +31,7 @@ class WorkTypesController < ApplicationController
 
   def destroy
     @work_type.destroy
-    redirect_to WorkType, notice: 'WorkType was successfully destroyed.'
+    redirect_to WorkType, notice: alert_destroy(WorkType)
   end
 
   private

@@ -1,0 +1,9 @@
+sv:
+  activerecord:
+    models:
+      company: Företag
+    attributes:
+      customer:
+        title: Titel
+        org_nbr: Organisationsnummer
+        comment: Kommentar
