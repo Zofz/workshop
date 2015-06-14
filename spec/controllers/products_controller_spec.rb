@@ -5,9 +5,10 @@ RSpec.describe ProductsController, type: :controller do
   let(:m_type) { create(:machine_type) }
   let(:brand) { create(:brand) }
   let(:valid_attr) do
-    attributes_for(:product, machine_type_id: m_type.id, brand_id: brand.id )
+    attributes_for(:product, machine_type_id: m_type.id, brand_id: brand.id)
   end
   let(:invalid_attr) { attributes_for(:product, machine_type_id: nil) }
+  let(:new_attributes) { attributes_for(:product, order_nbr: "Fiske") }
 
   allow_user_to :manage, Product
 
@@ -44,9 +45,9 @@ RSpec.describe ProductsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Product" do
-        expect {
+        expect do
           post :create, product: valid_attr
-        }.to change(Product, :count).by(1)
+        end.to change(Product, :count).by(1)
       end
 
       it "assigns a newly created product as @product" do
@@ -74,36 +75,35 @@ RSpec.describe ProductsController, type: :controller do
     end
   end
 
-  describe "PUT #update" do
+  describe "PATCH #update" do
     context "with valid params" do
-      let(:new_attributes) { attributes_for(:product, order_nbr: "Fiske") }
-      it 'updates the requested product' do
-        put :update, { id: product.to_param , product: new_attributes }
+      it "updates the requested product" do
+        put :update, id: product.to_param, product: new_attributes
         product.reload
 
         expect(product.order_nbr).to eq("Fiske")
       end
 
       it "assigns the requested product as @product" do
-        put :update, { id: product.to_param, product: valid_attr }
+        patch :update, id: product.to_param, product: valid_attr
         expect(assigns(:product)).to eq(product)
       end
 
       it "redirects to the product" do
-        put :update, { id: product.to_param, product: valid_attr }
+        patch :update, id: product.to_param, product: valid_attr
         expect(response).to redirect_to(product)
       end
     end
 
     context "with invalid params" do
       it "assigns the product as @product" do
-        put :update, { id: product.to_param , product: invalid_attr }
+        patch :update, id: product.to_param, product: invalid_attr
         expect(assigns(:product)).to eq(product)
       end
 
       it "re-renders the 'edit' template" do
-        put :update, { id: product.to_param , product: invalid_attr }
-        expect(response).to render_template('edit')
+        patch :update, id: product.to_param, product: invalid_attr
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -114,9 +114,9 @@ RSpec.describe ProductsController, type: :controller do
     end
 
     it "destroys the requested product" do
-      expect {
+      expect do
         delete :destroy, id: product
-      }.to change(Product, :count).by(-1)
+      end.to change(Product, :count).by(-1)
     end
 
     it "redirects to the products list" do

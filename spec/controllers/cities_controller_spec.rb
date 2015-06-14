@@ -52,6 +52,7 @@ RSpec.describe CitiesController, type: :controller do
     before(:each) do
       city
     end
+
     it 'reduces count by 1' do
       expect {
       delete :destroy, id: city.to_param
