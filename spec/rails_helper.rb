@@ -22,8 +22,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
   config.include ControllerMacros
-  config.extend ControllerMacros, type: 'controller'
-
+  config.extend ControllerMacros, type: :controller
 
   def build(*args)
     FactoryGirl.build(*args)

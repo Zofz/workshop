@@ -3,7 +3,7 @@ require "rails_helper"
 describe WorkTypesController, type: :controller do
   let(:work_type) { create(:work_type) }
   let(:valid_attr) { attributes_for(:work_type) }
-  let(:invalid_attr) { attributes_for(:work_type, title: '') }
+  let(:invalid_attr) { attributes_for(:work_type, title: "") }
 
   allow_user_to :manage, WorkType
 
@@ -40,9 +40,9 @@ describe WorkTypesController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new WorkType" do
-        expect {
+        expect do
           post :create, work_type: valid_attr
-        }.to change(WorkType, :count).by(1)
+        end.to change(WorkType, :count).by(1)
       end
 
       it "assigns a newly created work_type as @work_type" do
@@ -74,32 +74,32 @@ describe WorkTypesController, type: :controller do
     context "with valid params" do
       let(:new_attributes) { attributes_for(:work_type, title: "Fiske") }
       it 'updates the requested work_type' do
-        put :update, { id: work_type.to_param , work_type: new_attributes }
+        put :update, id: work_type.to_param, work_type: new_attributes
         work_type.reload
 
         expect(work_type.title).to eq("Fiske")
       end
 
       it "assigns the requested work_type as @work_type" do
-        put :update, { id: work_type.to_param, work_type: valid_attr }
+        put :update, id: work_type.to_param, work_type: valid_attr
         expect(assigns(:work_type)).to eq(work_type)
       end
 
       it "redirects to the work_type" do
-        put :update, { id: work_type.to_param, work_type: valid_attr }
+        put :update, id: work_type.to_param, work_type: valid_attr
         expect(response).to redirect_to(work_type)
       end
     end
 
     context "with invalid params" do
       it "assigns the work_type as @work_type" do
-        put :update, { id: work_type.to_param , work_type: invalid_attr }
+        put :update, id: work_type.to_param, work_type: invalid_attr
         expect(assigns(:work_type)).to eq(work_type)
       end
 
       it "re-renders the 'edit' template" do
-        put :update, { id: work_type.to_param , work_type: invalid_attr }
-        expect(response).to render_template('edit')
+        put :update, id: work_type.to_param, work_type: invalid_attr
+        expect(response).to render_template("edit")
       end
     end
   end
@@ -111,9 +111,9 @@ describe WorkTypesController, type: :controller do
     end
 
     it "destroys the requested work_type" do
-      expect {
+      expect do
         delete :destroy, id: work_type
-      }.to change(WorkType, :count).by(-1)
+      end.to change(WorkType, :count).by(-1)
     end
 
     it "redirects to the work_types list" do
