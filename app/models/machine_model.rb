@@ -8,6 +8,5 @@ class MachineModel < ActiveRecord::Base
   has_many :work_types, through: :model_work_types
   has_many :parts, through: :work_types
 
-
   validates :brand, :machine_type, presence: true
 end

@@ -3,7 +3,7 @@ Role.create([{ title: :admin, name: "Administratör",
              { title: :owner, name: "Ägare",
                description: "Detta är en ägare" },
              { title: :worker, name: "Arbetare",
-               description: "Detta är en arbetare"}])
+               description: "Detta är en arbetare" }])
 
 MachineType.create([{ title: "Rotorgräsklippare", short: :rotor },
                     { title: "Robotgräsklippare", short: :robot },
@@ -16,7 +16,7 @@ MachineType.create([{ title: "Rotorgräsklippare", short: :rotor },
                     { title: "Motorsåg", short: :motorsag },
                     { title: "Lövblås", short: :lovblas },
                     { title: "Jordfräs", short: :fras },
-                    { title: "Snöslunga", short: :snoslunga}])
+                    { title: "Snöslunga", short: :snoslunga }])
 
 Brand.create([{ title: "Klippo", short: :klippo,
                 url: "http://www.klippo.com/se/" },
@@ -108,4 +108,4 @@ City.create([{ title: "Nyhamnsläge", postal_title: "Nyhamnsläge",
              { title: "Viken", postal_title: "Viken",
                postal_code: "26363" },
              { title: "Viken", postal_title: "Viken",
-               postal_code: "26365"}])
+               postal_code: "26365" }])

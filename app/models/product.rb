@@ -4,5 +4,5 @@ class Product < ActiveRecord::Base
   belongs_to :brand
 
   validates :brand_id, :machine_type_id, :product_nbr,
-    presence: true
+                       presence: true
 end

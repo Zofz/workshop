@@ -14,7 +14,7 @@ class Ability
 
     if user.role.present?
       user.role.permissions.each do |permission|
-        if permission.subject_class == 'all'
+        if permission.subject_class == "all"
           can permission.action.to_sym, :all
         else
           can permission.action.to_sym, permission.subject_class.constantize

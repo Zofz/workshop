@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe BrandsController, type: :controller do
   let(:brand) { create(:brand) }
@@ -119,5 +119,4 @@ RSpec.describe BrandsController, type: :controller do
       expect(response).to redirect_to(brands_url)
     end
   end
-
 end

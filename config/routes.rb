@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    sessions: "users/sessions",
+    registrations: "users/registrations"
   }
   resource :user, path: :anvandare
 
   # Scope to change urls to swedish
-  scope path_names: {new: 'ny', edit: 'redigera'} do
+  scope path_names: { new: "ny", edit: "redigera" } do
     resources :addresses, path: :adresser
 
     resources :companies, path: :foretag
@@ -34,5 +34,5 @@ Rails.application.routes.draw do
     resources :work_types, path: :arbetstyper
   end
 
-  root 'statics#index'
+  root "statics#index"
 end
