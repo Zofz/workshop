@@ -16,7 +16,7 @@ class MachineTypesController < ApplicationController
   def create
     if @machine_type.save
       redirect_to machine_type_path(@machine_type),
-        notice: alert_create(MachineType)
+                  notice: alert_create(MachineType)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class MachineTypesController < ApplicationController
   def update
     if @machine_type.update(machine_type_params)
       redirect_to machine_type_path(@machine_type),
-        notice: alert_update(MachineType)
+                  notice: alert_update(MachineType)
     else
       render :edit
     end

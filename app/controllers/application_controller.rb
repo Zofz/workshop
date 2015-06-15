@@ -59,7 +59,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def self.permission
-    name.gsub('Controller', '').singularize.split('::').last.constantize.name rescue nil
+    name.gsub('Controller', '').singularize.split('::').
+      last.constantize.name rescue nil
   end
 
   def current_ability
