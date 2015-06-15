@@ -6,10 +6,12 @@ env:
 before_script:
  - cp config/database.yml.template config/database.yml
  - chmod +x config/database.yml
+ - psql -c 'create database workshop_test;' -U postgres
 script:
   - RAILS_ENV=test
   - bundle exec rake db:test:prepare
   - bundle exec rake
 addons:
+  postgresql: "9.4"
   code_climate:
     repo_token: 79d57a348990b9dccfbe0ebb817448fb817a2f4314c362e801c2de82f8636953
