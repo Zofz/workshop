@@ -17,7 +17,7 @@ module Workshop
 
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = {
-      :api_token => "01e6992a-db01-4d59-87a7-409d4ec42a57"
+      api_token: "01e6992a-db01-4d59-87a7-409d4ec42a57"
     }
 
     config.active_record.raise_in_transactional_callbacks = true

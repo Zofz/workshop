@@ -7,9 +7,9 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.id.present?
-      can [:read, :new,:create,:update,:destroy], :all
+      can [:read, :new, :create, :update, :destroy], :all
     else
-      can [:new,:create], :session
+      can [:new, :create], :session
     end
 
     if user.role.present?
