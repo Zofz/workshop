@@ -4,7 +4,7 @@ RSpec.describe CompaniesController, type: :controller do
   let(:company) { create(:company) }
   let(:valid_attr) { attributes_for(:company) }
   let(:invalid_attr) { attributes_for(:company, title: nil) }
-  let(:new_attr) { attributes_for(:company, title: 'Fiske') }
+  let(:new_attr) { attributes_for(:company, title: "Fiske") }
 
   allow_user_to :manage, Company
 

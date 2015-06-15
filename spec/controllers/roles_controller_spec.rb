@@ -4,7 +4,7 @@ RSpec.describe RolesController, type: :controller do
   let(:role) { create(:role) }
   let(:valid_attr) { attributes_for(:role) }
   let(:invalid_attr) { attributes_for(:role, title: nil) }
-  let(:new_attr) { attributes_for(:role, title: 'Fiske') }
+  let(:new_attr) { attributes_for(:role, title: "Fiske") }
 
   allow_user_to :manage, Role
 
