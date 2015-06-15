@@ -3,5 +3,4 @@ FactoryGirl.define do
     title
     description
   end
-
 end

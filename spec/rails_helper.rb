@@ -15,9 +15,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
-  # Comment to remove
-  # http://stackoverflow.com/questions/27532285/rspec-failure-error-unable-to-find-matching-line-from-backtrace
-  # config.infer_spec_type_from_file_location!
+  config.infer_spec_type_from_file_location!
 
   config.include Devise::TestHelpers, type: :controller
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }

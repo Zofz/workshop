@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if @product.save!
+    if @product.save
       redirect_to product_path(@product), notice: alert_create(Product)
     else
       render :new
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    if @product.update!(product_params)
+    if @product.update(product_params)
       redirect_to product_path(@product), notice: alert_update(Product)
     else
       render :edit
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy!
+    @product.destroy
     redirect_to products_path, notice: alert_destroy(Product)
   end
 

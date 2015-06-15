@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  load_and_authorize_resource
+  load_permissions_and_authorize_resource
 
   def index
   end

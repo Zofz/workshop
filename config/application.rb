@@ -13,7 +13,8 @@ module Workshop
     config.i18n.load_path +=
       Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
     config.i18n.default_locale = :sv
-
+    config.autoload_paths += %W(#{config.root}/spec)
+    config.autoload_paths += Dir["#{config.root}/spec/**/"]
 
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = {
