@@ -15,7 +15,8 @@ class MachineModelsController < ApplicationController
 
   def create
     if @machine_model.save
-      redirect_to machine_model_path(@machine_model), notice: alert_create(MachineModel)
+      redirect_to machine_model_path(@machine_model),
+        notice: alert_create(MachineModel)
     else
       render :new
     end
@@ -23,7 +24,8 @@ class MachineModelsController < ApplicationController
 
   def update
     if @machine_model.update(machine_model_params)
-      redirect_to machine_model_path(@machine_model), notice: alert_update(MachineModel)
+      redirect_to machine_model_path(@machine_model),
+        notice: alert_update(MachineModel)
     else
       render :edit
     end
@@ -37,6 +39,7 @@ class MachineModelsController < ApplicationController
   private
 
   def machine_model_params
-    params.require(:machine_model).permit(:brand_id,:machine_type_id,:brand,:machine_type)
+    params.require(:machine_model).permit(:brand_id, :machine_type_id,
+                                          :brand, :machine_type)
   end
 end

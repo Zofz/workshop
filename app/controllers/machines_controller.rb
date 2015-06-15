@@ -40,12 +40,14 @@ class MachinesController < ApplicationController
   private
 
   def machine_params
-    params.require(:machine).permit(:customer_id, :old_id, :serial_nbr, :product_id,
-                                    :manufactured, :engine_nbr, :deck_nbr)
+    params.require(:machine).permit(:customer_id, :old_id,
+                                    :serial_nbr, :product_id,
+                                    :manufactured, :engine_nbr,
+                                    :deck_nbr)
   end
 
   def customer_params
-    params.require(:customer).permit(:firstname, :lastname, :cellphone, :phone,
-                                     :email, :old_id, :comment)
+    params.require(:customer).permit(:firstname, :lastname, :cellphone,
+                                     :phone, :email, :old_id, :comment)
   end
 end
