@@ -1,6 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
+  # before_filter :configure_sign_up_params, only: [:create]
+  # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -17,17 +17,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-
   def update
-    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-    prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
+    self.resource = resource_class.to_adapter.
+                    get!(send(:"current_#{resource_name}").to_key)
+    if resource.respond_to?(:unconfirmed_email)
+      prev_unconfirmed_email = resource.unconfirmed_email
+    end
 
     resource_updated = update_resource(resource, account_update_params)
     yield resource if block_given?
     if resource_updated
       if is_flashing_format?
-        flash_key = update_needs_confirmation?(resource, prev_unconfirmed_email) ?
-            :update_needs_confirmation : :updated
+        if update_needs_confirmation?(resource, prev_unconfirmed_email)
+          flash_key = :update_needs_confirmation
+        else
+          flash_key = :updated
+        end
         set_flash_message :notice, flash_key
       end
       sign_in resource_name, resource, bypass: true
