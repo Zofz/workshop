@@ -19,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     self.resource = resource_class.to_adapter.
-                    get!(send(:"current_#{resource_name}").to_key)
+      get!(send(:"current_#{resource_name}").to_key)
     if resource.respond_to?(:unconfirmed_email)
       prev_unconfirmed_email = resource.unconfirmed_email
     end
