@@ -1,12 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CitiesController, type: :controller do
   let(:city) { create(:city) }
   let(:attr) { attributes_for(:city) }
+  let(:new_attr) { attributes_for(:city, postal_title: "Inte") }
+
   allow_user_to(:manage, :all)
 
-  describe 'GET #index' do
-    it 'returns http success' do
+  describe "GET #index" do
+    it "returns http success" do
       get :index
 
       expect(response).to have_http_status(:success)
@@ -32,31 +34,30 @@ RSpec.describe CitiesController, type: :controller do
 
   describe "POST #create" do
     it "creates a new city" do
-      expect {
+      expect do
         post :create, city: attr
-      }.to change(City, :count).by(1)
+      end.to change(City, :count).by(1)
     end
   end
 
   describe "PATCH #update" do
-    let(:new_attr) { attributes_for(:city, postal_title: 'Inte') }
     it "updates requested product" do
-      patch :update, { id: city.to_param, city: new_attr }
+      patch :update, id: city.to_param, city: new_attr
 
       city.reload
       expect(city.postal_title).to eq(new_attr[:postal_title])
     end
   end
 
-  describe 'DELETE #destroy' do
+  describe "DELETE #destroy" do
     before(:each) do
       city
     end
 
-    it 'reduces count by 1' do
-      expect {
-      delete :destroy, id: city.to_param
-      }.to change(City, :count).by(-1)
+    it "reduces count by 1" do
+      expect do
+        delete :destroy, id: city.to_param
+      end.to change(City, :count).by(-1)
     end
   end
 end

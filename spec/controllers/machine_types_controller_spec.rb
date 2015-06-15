@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe MachineTypesController, type: :controller do
-
   let(:machine_type) { create(:machine_type) }
   let(:valid_attr) { attributes_for(:machine_type) }
   let(:invalid_attr) { attributes_for(:machine_type, title: "") }
@@ -119,5 +118,4 @@ RSpec.describe MachineTypesController, type: :controller do
       expect(response).to redirect_to(machine_types_url)
     end
   end
-
 end

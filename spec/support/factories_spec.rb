@@ -7,7 +7,8 @@ RSpec.describe "Factory Girl" do
         factory = FactoryGirl.build(factory_name)
         if factory.respond_to?(:valid?)
           expect(factory).to be_valid,
-                             lambda { factory.errors.full_messages.join('\n') }
+            lambda { factory.errors.
+                     full_messages.join('\n') }
         end
       end
 
@@ -18,7 +19,8 @@ RSpec.describe "Factory Girl" do
             factory = FactoryGirl.build(factory_name, trait_name)
             if factory.respond_to?(:valid?)
               expect(factory).to be_valid,
-                                 lambda { factory.errors.full_messages.join('\n') }
+                lambda { factory.errors.
+                         full_messages.join('\n') }
             end
           end
         end
