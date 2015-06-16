@@ -7,7 +7,7 @@ before_script:
  - cp config/database.yml.template config/database.yml
  - chmod +x config/database.yml
  - psql -c 'create database workshop_test;' -U postgres
- - bundle exec rake db:migrate --trace
+ - RAILS_ENV=test bundle exec rake db:migrate --trace
 script:
   - RAILS_ENV=test bundle exec rake spec
 addons:
