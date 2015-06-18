@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Kund</th>
+          <th>Produkt</th>
+          <th>Tillverkad</th>
+          <th>Serienummer</th>
+          <th>Motornummer</th>
+          <th>Klippdäck</th>
+          <th>Gammalt ID</th>
+          <th>Redigera</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @machines.each do |machine| %>
+            <tr>
+              <td><%= machine.customer.present? ? link_to(machine.customer, machine.customer) : 'Ingen' %></td>
+              <td><%= machine.product.present? ? link_to(machine.product, machine.product) : 'Ingen' %></td>
+              <td><%= machine.manufactured %></td>
+              <td><%= machine.serial_nbr %></td>
+              <td><%= machine.engine_nbr %></td>
+              <td><%= machine.deck_nbr %></td>
+              <td><%= machine.old_id %></td>
+              <% if machine.customer.present? %>
+                  <td><%= link_to('Redigera', edit_customer_machine_path(machine.customer,machine)) %></td>
+              <% else %>
+                  <td><%= link_to('Redigera', edit_machine_path(machine)) %></td>
+              <% end %>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

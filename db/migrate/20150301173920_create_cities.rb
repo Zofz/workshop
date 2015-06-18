@@ -3,9 +3,11 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.string :postal_title
       t.string :title
-      t.string :postal_code
+      t.string :postal_code, unique: true
 
       t.timestamps
     end
+
+    add_index :cities, :postal_code
   end
 end

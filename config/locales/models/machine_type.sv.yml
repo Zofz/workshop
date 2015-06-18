@@ -1,0 +1,6 @@
+sv:
+  activerecord:
+    models:
+      machine_type:
+        one: Maskinsort
+        other: Maskinsorter

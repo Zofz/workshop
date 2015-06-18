@@ -1,6 +1,7 @@
 # encoding:UTF-8
 class MachinesController < ApplicationController
   load_and_authorize_resource
+  load_and_authorize_resource :customer, parent: true
 
 
   def index
@@ -16,39 +17,37 @@ class MachinesController < ApplicationController
   end
 
   def create
-    respond_to do |format|
-      if @customer.save
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_create)}) }
-        format.js
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
-      end
+    if @machine.save
+      redirect_to machine_path(@machine), notice: alert_create(Machine)
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @customer.update(customer_params)
-        format.html { redirect_to customer_path(@customer), notice: %(#{t(:customer)} #{t(:success_updated)}) }
-      else
-        format.html { render action: 'edit' }
-        format.js
-      end
+    if @customer.update(customer_params)
+      redirect_to customer_path(@customer), notice: alert_update(Machine)
+    else
+      render action: :edit
     end
   end
 
   def destroy
     @customer.destroy
-    respond_to do |format|
-      format.html { redirect_to :customers, notice: %(#{t(:customer)} #{t(:success_destroyed)}) }
-      format.js
-    end
+    redirect_to :customers, notice: alert_destroy(Machine)
   end
 
   private
 
+  def machine_params
+    params.require(:machine).permit(:customer_id, :old_id,
+                                    :serial_nbr, :product_id,
+                                    :manufactured, :engine_nbr,
+                                    :deck_nbr)
+  end
+
   def customer_params
-    params.require(:customer).permit(:name, :lastname, :cellphone, :phone, :email, :old_id, :company, :company_name, :org_nbr, :comment)
+    params.require(:customer).permit(:firstname, :lastname, :cellphone,
+                                     :phone, :email, :old_id, :comment)
   end
 end

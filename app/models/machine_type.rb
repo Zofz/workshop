@@ -1,8 +1,11 @@
 class MachineType < ActiveRecord::Base
 
-  has_many :machine_models
-  has_many :brands, through: :machine_models
+  has_many :products
+  has_many :brands, through: :products
 
-  has_many :work_types, through: :machine_models
-  has_many :parts, through: :machine_models
+  validates :title, presence: true
+
+  def to_s
+    title
+  end
 end

@@ -1,7 +1,7 @@
 <div class="team-2">
   <div class="inner-team">
     <%= customer.company.present? ? company : nil  %>
-    <h3><%=%(#{customer.name} #{customer.lastname})%></h3>
+    <h3><%= customer %></h3>
     <small class="green">Maskiner: <%=customer.machines.count%></small>
     <small class="green">Uppdrag: <%=customer.works.count%></small>
   </div>

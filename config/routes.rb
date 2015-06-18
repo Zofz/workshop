@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users, path: :anvandare, controllers: {
-                       sessions: 'users/sessions',
-                       registrations: 'users/registrations'
-                   }
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
+  resource :user, path: :anvandare
 
   # Scope to change urls to swedish
-  scope path_names: {new: 'ny', edit: 'redigera'} do
+  scope path_names: { new: "ny", edit: "redigera" } do
     resources :addresses, path: :adresser
 
     resources :companies, path: :foretag
@@ -25,11 +26,13 @@ Rails.application.routes.draw do
     end
 
     resources :machines, path: :maskiner
+    resources :machine_types, path: :typer
+    resources :brands, path: :marke
+    resources :products, path: :produkter
 
     resources :roles
+    resources :work_types, path: :arbetstyper
   end
 
-  # You can have the root of your site routed with "root"
-  root 'statics#index'
-
+  root "statics#index"
 end

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :part do
     stock
-    product_number
+    product_nbr
     bar_code
     price
 

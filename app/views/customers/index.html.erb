@@ -6,7 +6,6 @@
         <tr>
           <th>#</th>
           <th>Namn</th>
-          <th>Efternamn</th>
           <th>Telefon</th>
           <th>Mobil</th>
           <th>Epost</th>
@@ -16,13 +15,12 @@
         <tbody>
         <% @customers.each do |customer| %>
             <tr>
-              <td><%= customer.id %></td>
-              <td><%= customer.name %></td>
-              <td><%= customer.lastname %></td>
+              <td><%= link_to(customer.id, customer_path(customer)) %></td>
+              <td><%= link_to(customer, customer) %></td>
               <td><%= customer.phone %></td>
               <td><%= customer.cellphone %></td>
               <td><%= customer.email %></td>
-              <td><%=link_to('Redigera',edit_customer_path(customer))%></td>
+              <td><%=link_to('Redigera', edit_customer_path(customer))%></td>
             </tr>
         <% end %>
         </tbody>

@@ -1,7 +1,10 @@
-<li class="dropdown">
-  <%= link_to(model_name(current), "", class: "dropdow-toggle", data: {toggle: "dropdown"}) %>
-  <ul class="dropdown-menu">
-    <li><%= link_to("Ny " + model_name(current), url_for(module: current, action: :new, controller: current.name.tableize)) %></li>
-    <li><%= link_to("Alla " + models_name(current), url_for(module: current, action: :index)) %></li>
+<li class='dropdown'>
+  <%= link_to(model_name(model), url_for(action: :index, controller: '/'+model.name.tableize),
+    class: 'dropdow-toggle disabled', data: {toggle: 'dropdown'}) %>
+  <ul class='dropdown-menu'>
+    <li><%= link_to(t(%(#{model.name.downcase}.new)),
+                    url_for(action: :new, controller: '/'+model.name.tableize)) %></li>
+    <li><%= link_to(t('index', attribute: model.model_name.human(count: 2).downcase),
+                    url_for(action: :index, controller: '/'+model.name.tableize)) %></li>
   </ul>
 </li>

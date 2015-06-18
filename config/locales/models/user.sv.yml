@@ -1,0 +1,18 @@
+sv:
+  activerecord:
+    models:
+      user: Användare
+    attributes:
+      user:
+        firstname: Förnamn
+        lastname: Efternamn
+        phone: Telefon
+        role_id: Roll
+        role: Roll
+        email: E-post
+        created_at: Skapad
+        updated_at: Uppdaterad
+        password: Lösenord
+        current_password: Nuvarande lösenord
+  user:
+    settings: Kontoinställningar

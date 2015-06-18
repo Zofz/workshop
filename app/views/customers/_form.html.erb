@@ -1,27 +1,38 @@
 <%= simple_form_for(@customer, html: {class: 'form-horizontal form-company'}) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :lastname %>
-      <%= f.input :phone %>
-      <%= f.input :cellphone %>
-      <%= f.input :email %>
-      <%= f.input :old_id %>
-    </div>
-
-    <div id="addresses">
-      <%if !@customer.new_record? %>
-          <%= link_to('Lägg till adress', new_customer_address_path(@customer), remote: true)%>
-          <hr>
-      <%end%>
-    </div>
-    <%= f.association :company, collection: @companies %>
-
-    <div class="form-group">
-      <div class="col-md-offset-4 col-md-8">
-        <%= f.button :submit, class: 'btn btn-primary' %>
+  <%= f.error_notification %>
+  <ul class='nav nav-tabs' role='tablist'>
+    <li class='active'>
+      <%= link_to('Kunduppgifter','#info', aria: { controls: 'info' }, role: 'tab', data: { toggle: 'tab' }) %>
+    </li>
+    <li>
+      <%= link_to('Adresser','#addresses', aria: { controls: 'addresses' }, role: 'tab',  data: { toggle: 'tab' }) %>
+    </li>
+  </ul>
+  <div class='tab-content'>
+    <div id='info' class='tab-pane col-md-12 active' role='tabpanel'>
+      <div class='form-inputs'>
+        <%= f.input :firstname, autofocus: true %>
+        <%= f.input :lastname %>
+        <%= f.input :phone %>
+        <%= f.input :cellphone %>
+        <%= f.input :email %>
+        <%= f.input :old_id %>
+        <%= f.association :company, collection: Company.all %>
       </div>
     </div>
+    <div id='addresses' class='tab-pane col-md-12' role='tabpanel'>
+      <%= f.simple_fields_for :addresses do |address| %>
+        <%= render 'address_fields', f: address %>
+      <%end%>
+      <div class='links'>
+        <%= link_to_add_association 'Lägg till address', f, :addresses %>
+      </div>
+    </div>
+  </div>
 
+  <div class='form-group'>
+    <div class='col-md-offset-4 col-md-8'>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+  </div>
 <% end %>

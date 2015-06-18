@@ -20,11 +20,9 @@ class User < ActiveRecord::Base
   #              case_sensitive: false
   #          }
 
-  def print
-    if name? && lastname?
-      %(#{name} #{lastname})
-    elsif name
-      name
+  def name
+    if firstname? && lastname?
+      %(#{firstname} #{lastname})
     else
       email
     end

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t(:index, attribute: WorkType.model_name.human(count: 2)) %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th> <%=WorkType.human_attribute_name(:title)%> </th>
+      <th> <%= WorkType.human_attribute_name(:comment) %> </th>
+      <th><%=WorkType.human_attribute_name(:title)%></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_types.each do |work_type| %>
+      <tr>
+        <td><%= work_type.title %></td>
+        <td><%= work_type.comment %></td>
+        <td><%= link_to t(:show), work_type %><br>
+          <%= link_to t(:edit), edit_work_type_path(work_type) %><br>
+          <%= link_to t(:destroy), work_type, method: :delete, data: { confirm: t(:confirm_destroy) } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(:new, attribute: WorkType.model_name.human), new_work_type_path %>

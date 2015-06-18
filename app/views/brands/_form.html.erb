@@ -1,0 +1,11 @@
+<%= simple_form_for(@brand) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= render 'fields', var: f %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

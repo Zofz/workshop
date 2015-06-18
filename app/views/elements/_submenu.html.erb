@@ -1,0 +1,7 @@
+<li class="dropdown-submenu">
+  <%= link_to(model_name(model), url_for(action: :index, controller: '/'+model.name.tableize)) %>
+  <ul class="dropdown-menu pull-left">
+    <li><%= link_to(t(%(#{model.name.downcase}.new)),
+                    url_for(action: :new, controller: '/'+model.name.tableize)) %></li>
+  </ul>
+</li>

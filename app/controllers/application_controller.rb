@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :set_locale
+  helper_method [:model_name, :models_name, :success_create, :success_update]
 
   rescue_from CanCan::AccessDenied do |exception|
     if user_signed_in?
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordInvalid do |ex|
     flash[:alert] =
-        "Fel i formulär:  #{ex.record.errors.full_messages.join '; '}"
+      "Fel i formulär:  #{ex.record.errors.full_messages.join '; '}"
     render referring_action, status: :unprocessable_entity
   end
 
@@ -23,6 +24,67 @@ class ApplicationController < ActionController::Base
     fail ActionController::RoutingError.new 'not found'
   end
 
+  add_breadcrumb :root, "Hem"
+
+  def model_name(model)
+    if model.instance_of?(Class)
+      model.model_name.human
+    end
+  end
+
+  def models_name(model)
+    if model.instance_of?(Class)
+      return model.model_name.human(count: 2)
+    end
+  end
+
+  def alert_create(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_create)}.)
+    end
+  end
+
+  def alert_update(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_update)}.)
+    end
+  end
+
+  def alert_destroy(model)
+    if model.instance_of?(Class)
+      %(#{model_name(model)} #{t(:success_destroy)}.)
+    end
+  end
+
+  protected
+
+  def self.permission
+    name.gsub('Controller', '').singularize.split('::').
+      last.constantize.name rescue nil
+  end
+
+  def current_ability
+    @current_ability ||= Ability.new(current_user)
+  end
+
+  # load the permissions for the current user so that UI can be manipulated
+  def load_permissions
+    return unless current_user
+    @current_permissions = current_user.posts.each do |post|
+      post.permissions.map { |i| [i.subject_class, i.action] }
+    end
+  end
+
+  # Enables authentication and
+  def self.load_permissions_and_authorize_resource(*args)
+    load_and_authorize_resource(*args)
+    before_action(:load_permissions, *args)
+  end
+
+  def self.skip_authorization(*args)
+    skip_authorization_check(*args)
+    skip_before_filter(:load_permissions, *args)
+  end
 
   private
 
@@ -56,4 +118,7 @@ class ApplicationController < ActionController::Base
     redirect_to(:back) if params[:locale]
   end
 
+  def referring_action
+    Rails.application.routes.recognize_path(request.referer)[:action]
+  end
 end

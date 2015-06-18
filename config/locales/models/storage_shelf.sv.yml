@@ -1,0 +1,7 @@
+sv:
+  activerecord:
+    models:
+      storage_shelf:
+        one: Hylla
+        other: Hyllor
+

@@ -1,0 +1,11 @@
+sv:
+  activerecord:
+    models:
+      city:
+        one: Ort
+        other: Orter
+    attributes:
+      city:
+        postal_title: Postort
+        postal_code: Postnummer
+        title: Ort

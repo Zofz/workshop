@@ -4,7 +4,7 @@ FactoryGirl.define do
     work_type
 
     trait :done do
-      finished true
+      finished_at { Time.zone.now }
     end
 
     trait :assigned do

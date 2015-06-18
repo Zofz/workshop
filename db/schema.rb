@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403093142) do
+ActiveRecord::Schema.define(version: 20150614174413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.integer  "customer_id"
     t.integer  "company_id"
     t.integer  "city_id"
+    t.integer  "user_id"
     t.string   "street"
     t.string   "comment"
     t.datetime "created_at"
@@ -31,9 +32,15 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "addresses", ["customer_id"], name: "index_addresses_on_customer_id", using: :btree
 
   create_table "brands", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.string   "short"
+    t.string   "url"
+    t.string   "reseller_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "brands", ["title"], name: "index_brands_on_title", using: :btree
 
   create_table "brands_machine_types", force: :cascade do |t|
     t.integer "brand_id"
@@ -51,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.datetime "updated_at"
   end
 
+  add_index "cities", ["postal_code"], name: "index_cities_on_postal_code", using: :btree
+
   create_table "companies", force: :cascade do |t|
     t.string   "title"
     t.string   "org_nbr"
@@ -60,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "name"
+    t.string   "firstname"
     t.string   "lastname"
     t.string   "cellphone"
     t.string   "phone"
@@ -113,7 +122,8 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "machine_models", ["machine_type_id"], name: "index_machine_models_on_machine_type_id", using: :btree
 
   create_table "machine_types", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",      null: false
+    t.string   "short"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -205,15 +215,35 @@ ActiveRecord::Schema.define(version: 20150403093142) do
   add_index "parts_work_types", ["part_id"], name: "index_parts_work_types_on_part_id", using: :btree
   add_index "parts_work_types", ["work_type_id"], name: "index_parts_work_types_on_work_type_id", using: :btree
 
+  create_table "permission_roles", force: :cascade do |t|
+    t.integer  "permission_id"
+    t.integer  "role_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "permission_roles", ["permission_id"], name: "index_permission_roles_on_permission_id", using: :btree
+  add_index "permission_roles", ["role_id"], name: "index_permission_roles_on_role_id", using: :btree
+
+  create_table "permissions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "subject_class"
+    t.string   "action"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "products", force: :cascade do |t|
-    t.integer  "machine_model_id"
+    t.integer  "brand_id"
+    t.integer  "machine_type_id"
     t.string   "product_nbr"
     t.string   "order_nbr"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "products", ["machine_model_id"], name: "index_products_on_machine_model_id", using: :btree
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
+  add_index "products", ["machine_type_id"], name: "index_products_on_machine_type_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "title",       null: false
@@ -299,7 +329,7 @@ ActiveRecord::Schema.define(version: 20150403093142) do
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
-  create_table "work_activity", force: :cascade do |t|
+  create_table "work_activities", force: :cascade do |t|
     t.integer  "work_id"
     t.integer  "work_type_id"
     t.integer  "user_id"
@@ -310,9 +340,9 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.datetime "updated_at"
   end
 
-  add_index "work_activity", ["user_id"], name: "index_work_activity_on_user_id", using: :btree
-  add_index "work_activity", ["work_id"], name: "index_work_activity_on_work_id", using: :btree
-  add_index "work_activity", ["work_type_id"], name: "index_work_activity_on_work_type_id", using: :btree
+  add_index "work_activities", ["user_id"], name: "index_work_activities_on_user_id", using: :btree
+  add_index "work_activities", ["work_id"], name: "index_work_activities_on_work_id", using: :btree
+  add_index "work_activities", ["work_type_id"], name: "index_work_activities_on_work_type_id", using: :btree
 
   create_table "work_parts", force: :cascade do |t|
     t.integer  "part_id"
@@ -340,12 +370,10 @@ ActiveRecord::Schema.define(version: 20150403093142) do
     t.boolean  "finished"
     t.boolean  "invoiced"
     t.string   "invoice_nbr"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "works", ["machine_id"], name: "index_works_on_machine_id", using: :btree
-  add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree
 
 end

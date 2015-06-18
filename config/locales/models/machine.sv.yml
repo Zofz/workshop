@@ -1,0 +1,16 @@
+sv:
+  activerecord:
+    models:
+      machine:
+        one: Maskin
+        other: Maskiner
+    attributes:
+      machine:
+        customer_id: Kund
+        old_id: Gammalt maskinnummer
+        product_id: Produkt
+        product: Produkt
+        serial_nbr: Serienummer
+        manufactured: Tillverkad
+        engine_nbr: Motornummer
+        deck_nbr: Aggregatnummer

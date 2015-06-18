@@ -1,0 +1,7 @@
+sv:
+  activerecord:
+    models:
+      storage:
+        one: Förvaring
+        other: Förvaringar
+

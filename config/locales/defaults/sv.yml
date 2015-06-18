@@ -1,0 +1,4 @@
+sv:
+  success_create: skapades
+  success_update: uppdaterades
+  success_destroy: raderades

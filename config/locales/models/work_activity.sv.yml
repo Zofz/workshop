@@ -1,0 +1,4 @@
+sv:
+  activerecord:
+    models:
+      work_activity: Arbetsmoment

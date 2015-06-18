@@ -1,0 +1,9 @@
+sv:
+  activerecord:
+    models:
+      machine_model:
+        one: Modell
+        other: Modeller
+    attributes:
+      machine_model:
+        brand: Märke
