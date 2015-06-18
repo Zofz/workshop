@@ -4,9 +4,8 @@ rvm:
 env:
   - DB=postgresql
 script:
-  - RAILS_ENV=test
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
+  - bundle exec rake db:test:prepare RAILS_ENV=test
+  - bundle exec rake RAILS_ENV=test
 before_script:
  - cp config/database.yml.travis config/database.yml
  - chmod +x config/database.yml
