@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 
 gem 'binding_of_caller'
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
@@ -20,8 +21,9 @@ gem 'paper_trail', '~> 4.0.0.beta'
 gem 'pg'
 gem 'postmark-rails'
 gem 'puma'
-gem "rack-timeout"
-gem 'rails', '4.2.1'
+gem 'rack-timeout'
+gem 'rails', '4.2.2'
+gem 'rails_12factor', group: :production
 gem 'sass-rails'
 gem 'simple_form'
 gem 'turbolinks'
