@@ -4,6 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require "codeclimate-test-reporter"
 require "capybara"
+require "rspec/example_steps"
 
 CodeClimate::TestReporter.start
 
@@ -21,7 +22,7 @@ RSpec.configure do |config|
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
   config.include ControllerMacros
   config.extend ControllerMacros, type: :controller
-
+  Dir[Rails.root.join('spec/page_objects/**/*.rb')].each { |f| require f }
   def build(*args)
     FactoryGirl.build(*args)
   end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     sessions: "user/sessions",
     registrations: "user/registrations"
   }
+
   resource :user, path: :anvandare
 
   # Scope to change urls to swedish
