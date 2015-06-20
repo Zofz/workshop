@@ -19,6 +19,8 @@ gem 'momentjs-rails', '~> 2.9', github: 'derekprior/momentjs-rails'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'pg'
 gem 'postmark-rails'
+gem 'puma'
+gem "rack-timeout"
 gem 'rails', '4.2.1'
 gem 'sass-rails'
 gem 'simple_form'
