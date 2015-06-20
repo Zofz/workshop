@@ -3,7 +3,7 @@ machine:
     version: 2.2.1
 test:
   pre:
-    - ENV['CODECLIMATE_REPO_TOKEN']=CRT unless ENV['RAILS_ENV'] == 'production'
+    - CODECLIMATE_REPO_TOKEN=CRT unless RAILS_ENV == 'production'
 deployment:
   prod:
     branch: master
