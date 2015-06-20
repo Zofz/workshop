@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations"
+    sessions: "user/sessions",
+    registrations: "user/registrations"
   }
   resource :user, path: :anvandare
 
