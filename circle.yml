@@ -1,0 +1,11 @@
+machine:
+  ruby:
+    version: 2.2.1
+test:
+  pre:
+    - CODECLIMATE_REPO_TOKEN=CRT
+deployment:
+  prod:
+    branch: master
+    heroku:
+      appname: verkstad
