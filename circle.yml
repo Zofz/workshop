@@ -3,7 +3,7 @@ machine:
     version: 2.2.1
 test:
   pre:
-    - CODECLIMATE_REPO_TOKEN= $CODECLIMATE_REPO_TOKEN
+    - CODECLIMATE_REPO_TOKEN=$CODECLIMATE_REPO_TOKEN
 deployment:
   prod:
     branch: master
