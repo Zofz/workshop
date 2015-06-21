@@ -16,7 +16,7 @@ RSpec.describe ProductsController, type: :controller do
     it "assigns all products as @products" do
       get :index
 
-      expect(assigns(:products)).to eq([product])
+      expect(assigns(:products)).to eq(Product.all)
     end
   end
 

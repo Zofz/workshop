@@ -1,12 +1,19 @@
+$primary: #2a9a2b;
+$secondary: #1a5e1a;
+
 a {
-  color: #79d5b3;
-  &:focus, &:hover, &:active {
-    color: #79d5b3;
+  color: $primary;
+  &:focus,
+  &:hover,
+  &:active {
+    color: $primary;
   }
 }
 
-.color-green, a.read-more:hover, .linked:hover {
-  color: #79d5b3;
+.color-green,
+a.read-more:hover,
+.linked:hover {
+  color: $primary;
 }
 
 /*Headers Default
@@ -14,37 +21,37 @@ a {
 
 .header {
   .navbar-default .navbar-nav > .active > a {
-    color: #79d5b3;
-    border-color: #79d5b3;
+    color: $primary;
+    border-color: $primary;
   }
   .dropdown-menu {
-    border-top: solid 2px #79d5b3;
+    border-top: solid 2px $primary;
   }
   .navbar-default .navbar-nav > li:hover > a {
-    color: #59b795;
+    color: $secondary;
   }
   .navbar .nav > li > .search:hover {
-    border-bottom-color: #59b795;
-    color: #59b795;
+    border-bottom-color: $secondary;
+    color: $secondary;
   }
   .navbar-default .navbar-toggle {
-    border-color: #59b795;
+    border-color: $secondary;
   }
   .navbar-toggle {
-    background: #79d5b3;
+    background: $primary;
   }
   .navbar-default .navbar-toggle {
     &:hover, &:focus {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   .navbar-toggle:hover {
-    background: #59b795 !important;
+    background: $secondary !important;
   }
   .navbar-default .navbar-nav > .open > a {
-    color: #79d5b3;
+    color: $primary;
     &:hover, &:focus {
-      color: #79d5b3;
+      color: $primary;
     }
   }
 }
@@ -53,16 +60,16 @@ a {
 @media (max-width: 991px) {
   .header {
     .navbar-default .navbar-nav > .active > a {
-      background: #79d5b3;
+      background: $primary;
       color: #fff !important;
       &:hover, &:focus {
-        background: #79d5b3;
+        background: $primary;
         color: #fff !important;
       }
       border-color: #eee;
     }
     .navbar .nav > li > .search:hover {
-      background: #79d5b3;
+      background: $primary;
     }
   }
 }
@@ -73,37 +80,37 @@ a {
 .header-v1 {
   .navbar-default .navbar-nav > {
     .active > a {
-      color: #79d5b3;
+      color: $primary;
     }
     li > a {
       &:hover, &:focus {
-        color: #79d5b3;
+        color: $primary;
       }
     }
   }
   .dropdown-menu {
-    border-color: #79d5b3;
+    border-color: $primary;
   }
   .navbar-default .navbar-nav > li:hover > a {
-    color: #79d5b3;
+    color: $primary;
   }
   .navbar .nav > li > .search:hover {
-    color: #79d5b3;
-    color: #79d5b3;
+    color: $primary;
+    color: $primary;
   }
   .navbar-default .navbar-toggle {
-    border-color: #59b795;
+    border-color: $secondary;
   }
   .navbar-toggle {
-    background: #79d5b3;
+    background: $primary;
   }
   .navbar-default .navbar-toggle {
     &:hover, &:focus {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   .navbar-toggle:hover {
-    background: #59b795 !important;
+    background: $secondary !important;
   }
 }
 
@@ -115,15 +122,15 @@ a {
         border-color: #eee;
       }
       .active > a {
-        background-color: #79d5b3;
+        background-color: $primary;
         &:hover, &:focus {
-          background-color: #79d5b3;
+          background-color: $primary;
         }
         border-color: #eee;
       }
     }
     .navbar .nav > li > .search:hover {
-      background-color: #79d5b3;
+      background-color: $primary;
     }
   }
 }
@@ -133,21 +140,21 @@ a {
 
 .header-v2 {
   .dropdown-menu {
-    border-color: #79d5b3;
+    border-color: $primary;
   }
   .navbar-default .navbar-toggle {
-    border-color: #59b795;
+    border-color: $secondary;
   }
   .navbar-toggle {
-    background: #79d5b3;
+    background: $primary;
   }
   .navbar-default .navbar-toggle {
     &:hover, &:focus {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   .navbar-toggle:hover {
-    background: #59b795 !important;
+    background: $secondary !important;
   }
 }
 
@@ -155,15 +162,15 @@ a {
 @media (max-width: 991px) {
   .header-v2 .navbar-default .navbar-nav > {
     .active > a {
-      background: #79d5b3;
+      background: $primary;
       color: #fff !important;
       &:hover, &:focus {
-        background: #79d5b3;
+        background: $primary;
         color: #fff !important;
       }
     }
     li > a:hover {
-      color: #79d5b3;
+      color: $primary;
     }
   }
 }
@@ -174,32 +181,32 @@ a {
 .header-v3 {
   .navbar-default .navbar-nav > {
     .active > a {
-      color: #79d5b3;
+      color: $primary;
     }
     li:hover > a {
-      color: #59b795;
+      color: $secondary;
     }
   }
   .dropdown-menu {
-    border-color: #79d5b3;
+    border-color: $primary;
   }
   .navbar-default .navbar-toggle {
-    border-color: #59b795;
+    border-color: $secondary;
   }
   .navbar-toggle {
-    background: #79d5b3;
+    background: $primary;
   }
   .navbar-default .navbar-toggle {
     &:hover, &:focus {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   .navbar-toggle:hover {
-    background: #59b795 !important;
+    background: $secondary !important;
   }
   .navbar .nav > li > .search:hover {
     background: inherit;
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -207,16 +214,16 @@ a {
 @media (max-width: 991px) {
   .header-v3 {
     .navbar-default .navbar-nav > .active > a {
-      background: #79d5b3;
+      background: $primary;
       color: #fff !important;
       &:hover, &:focus {
-        background: #79d5b3;
+        background: $primary;
         color: #fff !important;
       }
       border-color: #eee;
     }
     .navbar .nav > li > .search:hover {
-      background: #79d5b3;
+      background: $primary;
     }
   }
 }
@@ -227,24 +234,24 @@ a {
 .header-v4 {
   .navbar-default .navbar-nav > {
     li > a:hover {
-      border-color: #79d5b3;
+      border-color: $primary;
     }
     .active > a {
-      border-color: #79d5b3;
-      color: #79d5b3;
+      border-color: $primary;
+      color: $primary;
     }
     li:hover > a {
-      border-color: #79d5b3;
-      color: #59b795;
+      border-color: $primary;
+      color: $secondary;
     }
   }
   .navbar .nav > li > .search:hover {
-    color: #79d5b3;
+    color: $primary;
   }
   .navbar-default .navbar-nav > .open > a {
-    color: #79d5b3;
+    color: $primary;
     &:hover, &:focus {
-      color: #79d5b3;
+      color: $primary;
     }
   }
 }
@@ -257,15 +264,15 @@ a {
         border-color: #eee;
       }
       .active > a {
-        color: #79d5b3 !important;
+        color: $primary !important;
         &:hover, &:focus {
-          color: #79d5b3 !important;
+          color: $primary !important;
         }
         border-color: #eee;
       }
     }
     .navbar .nav > li > .search:hover {
-      background: #79d5b3;
+      background: $primary;
     }
   }
 }
@@ -276,49 +283,49 @@ a {
 .header-v5 {
   .navbar-default .navbar-nav > {
     li > a:hover {
-      border-top: 2px solid #79d5b3;
+      border-top: 2px solid $primary;
     }
     .active > a {
-      border-top: 2px solid #79d5b3;
-      color: #79d5b3;
+      border-top: 2px solid $primary;
+      color: $primary;
     }
     li:hover > a {
-      color: #79d5b3;
+      color: $primary;
     }
     .open > a {
-      color: #79d5b3;
+      color: $primary;
       &:hover, &:focus {
-        color: #79d5b3;
+        color: $primary;
       }
     }
   }
   .dropdown-menu {
     li > a:hover, .active > a {
-      background: #79d5b3;
+      background: $primary;
     }
     li {
       > a:hover, &.dropdown-submenu:hover > a {
-        background: #79d5b3;
+        background: $primary;
       }
     }
-    border-color: #79d5b3;
+    border-color: $primary;
     .style-list li > a:hover {
       background: none;
     }
   }
   .style-list li a:hover {
-    color: #79d5b3;
+    color: $primary;
   }
   .shop-badge {
     &.badge-icons i {
-      color: #79d5b3;
+      color: $primary;
     }
     span.badge-sea {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   .badge-open {
-    border-top: 2px solid #79d5b3;
+    border-top: 2px solid $primary;
     box-shadow: 0 5px 5px 0 rgba(90, 90, 90, 0.075);
   }
 }
@@ -354,32 +361,35 @@ a {
 ------------------------------------*/
 
 .btn-u {
-  background: #79d5b3;
-  &:hover, &:focus, &:active, &.active {
-    background: #59b795;
+  background: $primary;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background: $secondary;
   }
 }
 
 .open .dropdown-toggle.btn-u {
-  background: #59b795;
+  background: $secondary;
 }
 
 /*Buttons Color*/
 
 .btn-u-split.dropdown-toggle {
-  border-left: solid 1px #59b795;
+  border-left: solid 1px $secondary;
 }
 
 /*Bordered Buttons*/
 
 .btn-u.btn-brd {
-  border-color: #79d5b3;
+  border-color: $primary;
   &:hover {
-    color: #59b795;
-    border-color: #59b795;
+    color: $secondary;
+    border-color: $secondary;
   }
   &.btn-brd-hover:hover {
-    background: #59b795;
+    background: $secondary;
   }
 }
 
@@ -387,13 +397,13 @@ a {
 ------------------------------------*/
 
 .service .service-icon {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Service Blocks*/
 
 .service-alternative .service:hover {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Thumbnail (Recent Work)
@@ -401,12 +411,12 @@ a {
 
 .thumbnail-style {
   h3 a:hover {
-    color: #79d5b3;
+    color: $primary;
   }
   a.btn-more {
-    background: #79d5b3;
+    background: $primary;
     &:hover {
-      box-shadow: 0 0 0 2px #59b795;
+      box-shadow: 0 0 0 2px $secondary;
     }
   }
 }
@@ -416,22 +426,28 @@ a {
 /*Heading*/
 
 .headline {
-  h2, h3, h4 {
-    border-bottom: 2px solid #79d5b3;
+  h2,
+  h3,
+  h4 {
+    border-bottom: 2px solid $primary;
   }
 }
 
 /*Blockquote*/
 
 blockquote:hover, .hero {
-  border-left-color: #79d5b3;
+  border-left-color: $primary;
 }
 
 /*Carousel
 ------------------------------------*/
 
-.carousel-arrow a.carousel-control:hover, .footer a, .copyright a, .footer a:hover, .copyright a:hover {
-  color: #79d5b3;
+.carousel-arrow a.carousel-control:hover,
+.footer a,
+.copyright a,
+.footer a:hover,
+.copyright a:hover {
+  color: $primary;
 }
 
 /*Footer
@@ -440,7 +456,7 @@ blockquote:hover, .hero {
 /*Footer Blog*/
 
 .footer .dl-horizontal a:hover {
-  color: #79d5b3 !important;
+  color: $primary !important;
 }
 
 /*Blog Posts
@@ -448,12 +464,12 @@ blockquote:hover, .hero {
 
 .posts .dl-horizontal {
   a:hover {
-    color: #79d5b3;
+    color: $primary;
   }
   &:hover {
     dt img, dd a {
-      color: #79d5b3;
-      border-color: #79d5b3 !important;
+      color: $primary;
+      border-color: $primary !important;
     }
   }
 }
@@ -461,12 +477,12 @@ blockquote:hover, .hero {
 /*Post Comment*/
 
 .post-comment h3 {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .blog-item .media {
   h3, h4.media-heading span a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -475,16 +491,16 @@ blockquote:hover, .hero {
 /*Tabs v1*/
 
 .tab-v1 .nav-tabs {
-  border-bottom: solid 2px #79d5b3;
+  border-bottom: solid 2px $primary;
   > {
     .active > a {
-      background: #79d5b3;
+      background: $primary;
       &:hover, &:focus {
-        background: #79d5b3;
+        background: $primary;
       }
     }
     li > a:hover {
-      background: #79d5b3;
+      background: $primary;
     }
   }
 }
@@ -492,15 +508,15 @@ blockquote:hover, .hero {
 /*Tabs v2*/
 
 .tab-v2 .nav-tabs li.active a {
-  border-top: solid 2px #79d5b3;
+  border-top: solid 2px $primary;
 }
 
 /*Tabs v3*/
 
 .tab-v3 .nav-pills li {
   a:hover, &.active a {
-    background: #79d5b3;
-    border: solid 1px #59b795;
+    background: $primary;
+    border: solid 1px $secondary;
   }
 }
 
@@ -510,11 +526,11 @@ blockquote:hover, .hero {
 .acc-home {
   a {
     &.active, &.accordion-toggle:hover {
-      color: #79d5b3;
+      color: $primary;
     }
   }
   .collapse.in {
-    border-bottom: solid 1px #79d5b3;
+    border-bottom: solid 1px $primary;
   }
 }
 
@@ -523,10 +539,10 @@ blockquote:hover, .hero {
 
 .testimonials {
   .testimonial-info {
-    color: #79d5b3;
+    color: $primary;
   }
   .carousel-arrow i:hover {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -534,7 +550,7 @@ blockquote:hover, .hero {
 ------------------------------------*/
 
 .info-blocks:hover i.icon-info-blocks {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Breadcrumb
@@ -542,7 +558,7 @@ blockquote:hover, .hero {
 
 .breadcrumb li {
   &.active, a:hover {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -551,10 +567,10 @@ blockquote:hover, .hero {
 
 .team {
   .thumbnail-style:hover h3 a {
-    color: #79d5b3 !important;
+    color: $primary !important;
   }
   ul.team-socail li i:hover {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -566,11 +582,11 @@ blockquote:hover, .hero {
 
 .who li {
   i {
-    color: #79d5b3;
+    color: $primary;
   }
   &:hover {
     i, a {
-      color: #79d5b3;
+      color: $primary;
     }
   }
 }
@@ -579,7 +595,7 @@ blockquote:hover, .hero {
 ------------------------------------*/
 
 .privacy a:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Portfolio Page
@@ -587,18 +603,18 @@ blockquote:hover, .hero {
 /*Portfolio v1*/
 
 .view a.info:hover {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Portfolio v2*/
 
 .sorting-block {
   .sorting-nav li.active {
-    color: #79d5b3;
-    border-bottom: solid 1px #79d5b3;
+    color: $primary;
+    border-bottom: solid 1px $primary;
   }
   .sorting-grid li a:hover span.sorting-cover {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -607,34 +623,34 @@ blockquote:hover, .hero {
 
 .blog {
   h3, li a:hover {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
 /*Blog Tags*/
 
 ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Blog Photos*/
 
 .blog-photos li img:hover {
-  box-shadow: 0 0 0 2px #79d5b3;
+  box-shadow: 0 0 0 2px $primary;
 }
 
 /*Blog Latest Tweets*/
 
 .blog-twitter .blog-twitter-inner {
   &:hover {
-    border-color: #79d5b3;
-    border-top-color: #79d5b3;
+    border-color: $primary;
+    border-top-color: $primary;
     &:after {
-      border-top-color: #79d5b3;
+      border-top-color: $primary;
     }
   }
   a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -642,21 +658,21 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 ------------------------------------*/
 
 .blog-item h4.media-heading span a {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Coming Soon Page
 ------------------------------------*/
 
 .coming-soon-border {
-  border-top: solid 3px #79d5b3;
+  border-top: solid 3px $primary;
 }
 
 /*Search Page
 ------------------------------------*/
 
 .booking-blocks p a, .icon-page li:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Icons Page
@@ -665,7 +681,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /*Glyphicons*/
 
 .glyphicons-demo a:hover {
-  color: #79d5b3;
+  color: $primary;
   text-decoration: none;
 }
 
@@ -675,24 +691,24 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .magazine-news {
   .by-author strong, a.read-more {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
 /*Magazine Mini News*/
 
 .magazine-mini-news .post-author strong {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .news-read-more i {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Sidebar Features*/
 
 .magazine-page h3 a:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Page Features
@@ -700,34 +716,34 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /*Tag Boxes v1*/
 
 .tag-box-v1 {
-  border-top: solid 2px #79d5b3;
+  border-top: solid 2px $primary;
 }
 
 /*Tag Boxes v2*/
 
 .tag-box-v2 {
-  border-left: solid 2px #79d5b3;
+  border-left: solid 2px $primary;
 }
 
 /*Tag Boxes v7*/
 
 .tag-box-v7 {
-  border-bottom: solid 2px #79d5b3;
+  border-bottom: solid 2px $primary;
 }
 
 /*Font Awesome Icon Page Style*/
 
 .fa-icons li:hover {
-  color: #79d5b3;
+  color: $primary;
   i {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
 /*GLYPHICONS Icons Page Style*/
 
 .bs-glyphicons li:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Navigation
@@ -736,14 +752,19 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .pagination {
   > .active > {
-    a, span, a:hover, span:hover, a:focus, span:focus {
-      background-color: #79d5b3;
-      border-color: #79d5b3;
+    a,
+    span,
+    a:hover,
+    span:hover,
+    a:focus,
+    span:focus {
+      background-color: $primary;
+      border-color: $primary;
     }
   }
   li a:hover {
-    background: #59b795;
-    border-color: #59b795;
+    background: $secondary;
+    border-color: $secondary;
   }
 }
 
@@ -751,8 +772,8 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .pager li > a {
   &:hover, &:focus {
-    background: #59b795;
-    border-color: #59b795;
+    background: $secondary;
+    border-color: $secondary;
   }
 }
 
@@ -760,7 +781,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 ------------------------------------*/
 
 .reg-block {
-  border-top: solid 2px #79d5b3;
+  border-top: solid 2px $primary;
 }
 
 /*Image Hover
@@ -768,14 +789,14 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /*Image-hover*/
 
 #effect-2 figure .img-hover {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Blog Large Page
 ------------------------------------*/
 
 .blog h2 a:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Timeline v1 Page
@@ -783,7 +804,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .timeline-v1 {
   > li > .timeline-badge i:hover, .timeline-footer .likes:hover i {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -792,7 +813,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /* The icons */
 
 .timeline-v2 > li .cbp_tmicon, .progress-bar-u {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Progress Bar
@@ -801,34 +822,38 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /*Job Inner Page
 ------------------------------------*/
 
-.job-description .save-job a:hover, .block-description .save-job a:hover {
-  color: #79d5b3;
+.job-description .save-job a:hover,
+.block-description .save-job a:hover {
+  color: $primary;
 }
 
 .job-description .p-chart .overflow-h li {
   i, a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
 .block-description .p-chart .overflow-h li {
   i, a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
 /*Colorful-ul*/
 
 .job-description .colorful-ul li a {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Search Inner Page
 ------------------------------------*/
 
 .s-results {
-  .related-search a:hover, .inner-results h3 a:hover, .up-ul li a:hover, .down-ul li a {
-    color: #79d5b3;
+  .related-search a:hover,
+  .inner-results h3 a:hover,
+  .up-ul li a:hover,
+  .down-ul li a {
+    color: $primary;
   }
 }
 
@@ -837,7 +862,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .funny-boxes {
   p a, .funny-boxes-img li i {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -846,7 +871,7 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .sidebar-nav-v1 ul li {
   &:hover a, &.active a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -854,17 +879,19 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 ------------------------------------*/
 
 blockquote {
-  &.bq-green, &:hover, &.text-right:hover {
-    border-color: #79d5b3;
+  &.bq-green,
+  &:hover,
+  &.text-right:hover {
+    border-color: $primary;
   }
 }
 
 /*Green Left Bordered Funny Box**/
 
 .funny-boxes-left-green {
-  border-left: solid 2px #79d5b3;
+  border-left: solid 2px $primary;
   &:hover {
-    border-left-color: #79d5b3;
+    border-left-color: $primary;
   }
 }
 
@@ -872,22 +899,23 @@ blockquote {
 ------------------------------------*/
 /*Testimonials*/
 
-.testimonials .carousel-arrow i:hover, .testimonials-bg-default .item p {
-  background: #79d5b3;
+.testimonials .carousel-arrow i:hover,
+.testimonials-bg-default .item p {
+  background: $primary;
 }
 
 /*Testimonials Default*/
 
 .testimonials.testimonials-bg-default .item p:after {
-  border-top-color: #79d5b3;
+  border-top-color: $primary;
 }
 
 .testimonials-bg-default .carousel-arrow i {
-  background: #79d5b3;
+  background: $primary;
 }
 
 .testimonials.testimonials-bg-default .carousel-arrow i:hover {
-  background: #59b795;
+  background: $secondary;
 }
 
 /*Promo Page
@@ -895,9 +923,9 @@ blockquote {
 /*Promo Box*/
 
 .promo-box:hover strong {
-  color: #79d5b3;
+  color: $primary;
   a {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -905,20 +933,21 @@ blockquote {
 ------------------------------------*/
 
 .dropcap {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .dropcap-bg {
+  background: $primary;
   color: #fff;
-  background: #79d5b3;
 }
 
 /*Breadcrumbs
 ------------------------------------*/
 
 span {
-  &.label-u, &.badge-u {
-    background: #79d5b3;
+  &.label-u,
+  &.badge-u {
+    background: $primary;
   }
 }
 
@@ -927,14 +956,14 @@ span {
 /*Icon Link*/
 
 .link-icon:hover i {
-  color: #79d5b3;
-  border: solid 1px #79d5b3;
+  border: solid 1px $primary;
+  color: $primary;
 }
 
 .link-bg-icon:hover i {
-  color: #79d5b3;
-  background: #79d5b3 !important;
-  border-color: #79d5b3;
+  background: $primary !important;
+  border-color: $primary;
+  color: $primary;
 }
 
 /*Icons Backgroun Color
@@ -942,11 +971,11 @@ span {
 
 i {
   &.icon-color-u {
-    color: #79d5b3;
-    border: solid 1px #79d5b3;
+    color: $primary;
+    border: solid 1px $primary;
   }
   &.icon-bg-u {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -954,23 +983,23 @@ i {
 ------------------------------------*/
 
 .line-icon-page .item:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /*Colored Content Boxes
 ------------------------------------*/
 
 .service-block-u {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Panels (Portlets)
 ------------------------------------*/
 
 .panel-u {
-  border-color: #79d5b3;
+  border-color: $primary;
   > .panel-heading {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -978,16 +1007,16 @@ i {
 ------------------------------------*/
 
 .owl-btn:hover {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Counter
 ------------------------------------*/
 
 .counters span.counter-icon i {
-  background: #79d5b3;
+  background: $primary;
   &:after {
-    border-top: 7px solid #79d5b3;
+    border-top: 7px solid $primary;
   }
 }
 
@@ -997,15 +1026,15 @@ i {
 
 .sky-form {
   .button {
-    background: #79d5b3;
+    background: $primary;
   }
   .rating input:checked ~ label {
-    color: #79d5b3;
+    color: $primary;
   }
   .message {
-    color: #79d5b3;
+    color: $primary;
     i {
-      border-color: #79d5b3;
+      border-color: $primary;
     }
   }
 }
@@ -1019,28 +1048,28 @@ i {
 
 .profile {
   .profile-post:hover span.profile-post-numb {
-    color: #79d5b3;
+    color: $primary;
   }
   .date-formats {
-    background: #79d5b3;
+    background: $primary;
   }
   .name-location span {
     i, a:hover {
-      color: #79d5b3;
+      color: $primary;
     }
   }
 }
 
 .share-list li i {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .profile {
   .comment-list-v2 li:hover i, .comment-list li:hover i {
-    color: #79d5b3;
+    color: $primary;
   }
   .profile-post.color-one {
-    border-color: #79d5b3;
+    border-color: $primary;
   }
 }
 
@@ -1049,13 +1078,13 @@ i {
 /*Pricing Head*/
 
 .pricing:hover h4 {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .pricing-head {
   h3 {
-    background: #79d5b3;
-    text-shadow: 0 1px 0 #59b795;
+    background: $primary;
+    text-shadow: 0 1px 0 $secondary;
   }
   h4 {
     color: #999;
@@ -1069,49 +1098,53 @@ i {
 .pricing-content li {
   border-bottom: solid 1px #cff8e9;
   i {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
 /*Pricing Extra*/
 
 .sticker-left {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /*Pricing Footer*/
 
 .pricing-footer {
   a:hover, button:hover {
-    background: #59b795;
+    background: $secondary;
   }
 }
 
 /*Pricing Active*/
 
 .price-active h4 {
-  color: #79d5b3;
+  color: $primary;
 }
 
 .no-space-pricing {
-  .price-active .pricing-head h4, .pricing:hover .pricing-head h4 {
-    color: #79d5b3;
+  .price-active .pricing-head h4,
+  .pricing:hover .pricing-head h4 {
+    color: $primary;
   }
 }
 
-/*Mega Pricing Tables 
+/*Mega Pricing Tables
 ------------------------------------*/
 
-.pricing-mega-v1 .pricing-head h3, .pricing-mega-v2 .pricing-head h3, .pricing-mega-v3 .pricing-head h3 {
-  text-shadow: 0 1px 0 #59b795;
+.pricing-mega-v1 .pricing-head h3,
+.pricing-mega-v2 .pricing-head h3,
+.pricing-mega-v3 .pricing-head h3 {
+  text-shadow: 0 1px 0 $secondary;
 }
 
 /*Pricing Table Mega v1 Version
 ------------------------------------*/
 
 .pricing-mega-v1 {
-  .pricing:hover h4 i, .pricing-content li i {
-    color: #79d5b3;
+  .pricing:hover h4 i,
+  .pricing-content li i {
+    color: $primary;
   }
 }
 
@@ -1120,10 +1153,10 @@ i {
 
 .pricing-bg-colored {
   .pricing:hover {
-    background: #79d5b3;
+    background: $primary;
   }
   .pricing-head i {
-    color: #79d5b3;
+    color: $primary;
   }
   .pricing-footer .btn-u {
     border: 1px solid #fff;
@@ -1133,71 +1166,77 @@ i {
   }
 }
 
-/*Pricing Table Mega v2 
+/*Pricing Table Mega v2
 ------------------------------------*/
 
 .pricing-mega-v2 .block:hover {
-  .bg-color, h3, h4 {
-    background: #79d5b3;
+  .bg-color,
+  h3,
+  h4 {
+    background: $primary;
   }
   li {
-    background: #79d5b3;
+    background: $primary;
     i {
-      background: #79d5b3;
+      background: $primary;
     }
   }
   h4 i {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
-/*Pricing Table Mega v3 
+/*Pricing Table Mega v3
 ------------------------------------*/
 
 .pricing-mega-v1 .btn-group .dropdown-menu, .pricing-mega-v3 .btn-group .dropdown-menu {
-  background: #79d5b3 !important;
+  background: $primary !important;
 }
 
 .pricing-mega-v1 .btn-group .dropdown-menu li a:hover, .pricing-mega-v3 .btn-group .dropdown-menu li a:hover {
-  background: #59b795;
+  background: $secondary;
 }
 
-/*Grid Block v2 
+/*Grid Block v2
 ------------------------------------*/
 
 .grid-block-v2 li:hover .grid-block-v2-info {
-  border-color: #79d5b3;
+  border-color: $primary;
 }
 
-/*Testimonials v3 Title 
+/*Testimonials v3 Title
 ------------------------------------*/
 
 .testimonials-v3 {
   .testimonials-v3-title p {
-    color: #79d5b3;
+    color: $primary;
   }
   .owl-buttons {
     .owl-prev:hover, .owl-next:hover {
-      background: #79d5b3;
+      background: $primary;
     }
   }
 }
 
-/*Content Boxes v4 
+/*Content Boxes v4
 ------------------------------------*/
 
-.content-boxes-v4 i, .thumbnails-v1 .read-more {
-  color: #79d5b3;
+.content-boxes-v4 i,
+.thumbnails-v1 .read-more {
+  color: $primary;
 }
 
-/*Thumbnails v1 
+/*Thumbnails v1
 ------------------------------------*/
 
-/*Team v1 
+/*Team v1
 ------------------------------------*/
 
-.team-v1 li:hover > p:before, .headline-center h2:after, .headline-left .headline-brd:after, .portfolio-box .portfolio-box-in i {
-  background: #79d5b3;
+.team-v1 li:hover > p:before,
+.headline-center h2:after,
+.headline-left .headline-brd:after,
+.portfolio-box .portfolio-box-in i {
+  background: $primary;
 }
 
 /*Headliner Center
@@ -1213,7 +1252,7 @@ i {
 ------------------------------------*/
 
 .flat-bg-block-v1 .checked-list i {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /* Owl Carousel v5
@@ -1221,7 +1260,7 @@ i {
 
 .owl-carousel-v5 .owl-controls {
   .owl-page.active span, &.clickable .owl-page:hover span {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -1229,14 +1268,14 @@ i {
 ------------------------------------*/
 
 .content-boxes-v5:hover i {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /* Block Grid v1
 ------------------------------------*/
 
 .block-grid-v1:hover {
-  border-color: #79d5b3;
+  border-color: $primary;
 }
 
 /* Content Boxes v6
@@ -1244,9 +1283,9 @@ i {
 
 .content-boxes-v6:hover i {
   &:after {
-    border-color: #79d5b3;
+    border-color: $primary;
   }
-  background: #79d5b3;
+  background: $primary;
 }
 
 /* Portfolio Box-v2
@@ -1255,7 +1294,7 @@ i {
 .portfolio-box-v2 .portfolio-box-v2-in i {
   background: rgba(121, 213, 179, 0.8);
   &:hover {
-    background: #79d5b3;
+    background: $primary;
   }
 }
 
@@ -1263,15 +1302,15 @@ i {
 ------------------------------------*/
 
 .service-block-v1 i {
-  background: #79d5b3;
+  background: $primary;
 }
 
 /* Testimonials bs
 ------------------------------------*/
 
 .testimonials-bs .carousel-control-v2 i:hover {
-  border-color: #79d5b3;
-  color: #79d5b3;
+  border-color: $primary;
+  color: $primary;
 }
 
 /* Fusion Portfolio
@@ -1279,11 +1318,11 @@ i {
 
 .fusion-portfolio #filters-container {
   .cbp-filter-item-active {
-    background: #79d5b3;
-    border-color: #79d5b3;
+    background: $primary;
+    border-color: $primary;
   }
   .cbp-filter-item:hover {
-    color: #79d5b3;
+    color: $primary;
   }
 }
 
@@ -1291,14 +1330,14 @@ i {
 ------------------------------------*/
 
 .blog_masonry_3col h3 a:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /* Recent Works
 ------------------------------------*/
 
 .owl-work-v1 .item a:hover span {
-  border-bottom-color: #79d5b3;
+  border-bottom-color: $primary;
 }
 
 /* Footer Default
@@ -1307,19 +1346,19 @@ i {
 .footer-default {
   .footer {
     .dl-horizontal a:hover {
-      color: #79d5b3 !important;
+      color: $primary !important;
     }
     a {
-      color: #79d5b3;
+      color: $primary;
       &:hover {
-        color: #59b795;
+        color: $secondary;
       }
     }
   }
   .copyright a {
-    color: #79d5b3;
+    color: $primary;
     &:hover {
-      color: #59b795;
+      color: $secondary;
     }
   }
 }
@@ -1328,7 +1367,7 @@ i {
 ------------------------------------*/
 
 .footer-v4 .copyright a {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /* Title v1
@@ -1336,7 +1375,7 @@ i {
 
 .title-v1 {
   h1:after, h2:after {
-    background-color: #79d5b3;
+    background-color: $primary;
   }
 }
 
@@ -1344,12 +1383,12 @@ i {
 ------------------------------------*/
 
 .copyright-section i.back-to-top:hover {
-  color: #79d5b3;
+  color: $primary;
 }
 
 /* Top Control
 ------------------------------------*/
 
 #topcontrol:hover {
-  background-color: #79d5b3;
+  background-color: $primary;
 }

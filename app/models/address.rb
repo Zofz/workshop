@@ -4,4 +4,8 @@ class Address < ActiveRecord::Base
   belongs_to :city
 
   validates :street, presence: true
+
+  def to_s
+    %(#{street}, #{city})
+  end
 end

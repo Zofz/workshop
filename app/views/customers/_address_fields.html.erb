@@ -1,4 +1,5 @@
 <div class='nested-fields'>
+  <p><%= f.object %></p>
   <%= f.input :street %>
   <%= f.input :city_id, collection: City.all, label_method: :to_s %>
   <%= f.input :comment %>

@@ -1,0 +1,30 @@
+<dl class='list-unstyled'>
+  <% attributes.each do |a| %>
+    <dt class='color-green'>
+    <% if a == :phone || a == :cellphone %>
+      <%= fa_icon('phone') %>
+    <% elsif a == :email %>
+      <%= fa_icon('envelope') %>
+    <% end %>
+    <%= object.class.human_attribute_name(a) %>:
+
+    </dt>
+    <dd>
+    <% if a == :phone || a == :cellphone %>
+      <%= link_to(object.try(a),%(tel:#{object.try(a)})) %>
+    <% elsif a == :email %>
+      <%= link_to(object.try(a),%(mailto:#{object.try(a)})) %>
+    <% elsif a == :url %>
+      <%= link_to(object.try(a),object.try(a)) %>
+    <% elsif a == :addresses %>
+      <% if object.try(a).present? %>
+        <% object.try(a).each do |add| %>
+          <%= link_to(add, %(http://maps.google.com/?q=#{add}), target:'_blank')%>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= object.try(a) %>
+    <% end %>
+    </dd>
+  <% end %>
+</dl>

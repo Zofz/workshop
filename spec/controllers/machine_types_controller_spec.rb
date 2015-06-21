@@ -11,7 +11,7 @@ RSpec.describe MachineTypesController, type: :controller do
   describe "GET #index" do
     it "assigns all machine_types as @machine_types" do
       get :index
-      expect(assigns(:machine_types)).to eq([machine_type])
+      expect(assigns(:machine_types)).to eq(MachineType.all)
     end
   end
 
