@@ -6,6 +6,9 @@ RSpec.describe Permission, type: :model do
   describe "Associations" do
     it { is_expected.to validate_presence_of(:subject_class) }
     it { is_expected.to validate_presence_of(:action) }
-    it { is_expected.to validate_uniqueness_of(:subject_class).scoped_to(:action) }
+    it do
+      is_expected.to validate_uniqueness_of(:subject_class).
+        scoped_to(:action)
+    end
   end
 end
