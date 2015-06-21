@@ -3,12 +3,16 @@ $secondary: #1a5e1a;
 
 a {
   color: $primary;
-  &:focus, &:hover, &:active {
+  &:focus,
+  &:hover,
+  &:active {
     color: $primary;
   }
 }
 
-.color-green, a.read-more:hover, .linked:hover {
+.color-green,
+a.read-more:hover,
+.linked:hover {
   color: $primary;
 }
 
@@ -358,7 +362,10 @@ a {
 
 .btn-u {
   background: $primary;
-  &:hover, &:focus, &:active, &.active {
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
     background: $secondary;
   }
 }
@@ -419,7 +426,9 @@ a {
 /*Heading*/
 
 .headline {
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     border-bottom: 2px solid $primary;
   }
 }
@@ -433,7 +442,11 @@ blockquote:hover, .hero {
 /*Carousel
 ------------------------------------*/
 
-.carousel-arrow a.carousel-control:hover, .footer a, .copyright a, .footer a:hover, .copyright a:hover {
+.carousel-arrow a.carousel-control:hover,
+.footer a,
+.copyright a,
+.footer a:hover,
+.copyright a:hover {
   color: $primary;
 }
 
@@ -739,7 +752,12 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 
 .pagination {
   > .active > {
-    a, span, a:hover, span:hover, a:focus, span:focus {
+    a,
+    span,
+    a:hover,
+    span:hover,
+    a:focus,
+    span:focus {
       background-color: $primary;
       border-color: $primary;
     }
@@ -804,7 +822,8 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 /*Job Inner Page
 ------------------------------------*/
 
-.job-description .save-job a:hover, .block-description .save-job a:hover {
+.job-description .save-job a:hover,
+.block-description .save-job a:hover {
   color: $primary;
 }
 
@@ -830,7 +849,10 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 ------------------------------------*/
 
 .s-results {
-  .related-search a:hover, .inner-results h3 a:hover, .up-ul li a:hover, .down-ul li a {
+  .related-search a:hover,
+  .inner-results h3 a:hover,
+  .up-ul li a:hover,
+  .down-ul li a {
     color: $primary;
   }
 }
@@ -857,7 +879,9 @@ ul.blog-tags a:hover, .blog-post-tags ul.blog-tags a:hover {
 ------------------------------------*/
 
 blockquote {
-  &.bq-green, &:hover, &.text-right:hover {
+  &.bq-green,
+  &:hover,
+  &.text-right:hover {
     border-color: $primary;
   }
 }
@@ -875,7 +899,8 @@ blockquote {
 ------------------------------------*/
 /*Testimonials*/
 
-.testimonials .carousel-arrow i:hover, .testimonials-bg-default .item p {
+.testimonials .carousel-arrow i:hover,
+.testimonials-bg-default .item p {
   background: $primary;
 }
 
@@ -912,15 +937,16 @@ blockquote {
 }
 
 .dropcap-bg {
-  color: #fff;
   background: $primary;
+  color: #fff;
 }
 
 /*Breadcrumbs
 ------------------------------------*/
 
 span {
-  &.label-u, &.badge-u {
+  &.label-u,
+  &.badge-u {
     background: $primary;
   }
 }
@@ -930,14 +956,14 @@ span {
 /*Icon Link*/
 
 .link-icon:hover i {
-  color: $primary;
   border: solid 1px $primary;
+  color: $primary;
 }
 
 .link-bg-icon:hover i {
-  color: $primary;
   background: $primary !important;
   border-color: $primary;
+  color: $primary;
 }
 
 /*Icons Backgroun Color
@@ -1097,15 +1123,18 @@ i {
 }
 
 .no-space-pricing {
-  .price-active .pricing-head h4, .pricing:hover .pricing-head h4 {
+  .price-active .pricing-head h4,
+  .pricing:hover .pricing-head h4 {
     color: $primary;
   }
 }
 
-/*Mega Pricing Tables 
+/*Mega Pricing Tables
 ------------------------------------*/
 
-.pricing-mega-v1 .pricing-head h3, .pricing-mega-v2 .pricing-head h3, .pricing-mega-v3 .pricing-head h3 {
+.pricing-mega-v1 .pricing-head h3,
+.pricing-mega-v2 .pricing-head h3,
+.pricing-mega-v3 .pricing-head h3 {
   text-shadow: 0 1px 0 $secondary;
 }
 
@@ -1113,7 +1142,8 @@ i {
 ------------------------------------*/
 
 .pricing-mega-v1 {
-  .pricing:hover h4 i, .pricing-content li i {
+  .pricing:hover h4 i,
+  .pricing-content li i {
     color: $primary;
   }
 }
@@ -1136,11 +1166,13 @@ i {
   }
 }
 
-/*Pricing Table Mega v2 
+/*Pricing Table Mega v2
 ------------------------------------*/
 
 .pricing-mega-v2 .block:hover {
-  .bg-color, h3, h4 {
+  .bg-color,
+  h3,
+  h4 {
     background: $primary;
   }
   li {
@@ -1154,7 +1186,7 @@ i {
   }
 }
 
-/*Pricing Table Mega v3 
+/*Pricing Table Mega v3
 ------------------------------------*/
 
 .pricing-mega-v1 .btn-group .dropdown-menu, .pricing-mega-v3 .btn-group .dropdown-menu {
@@ -1165,14 +1197,14 @@ i {
   background: $secondary;
 }
 
-/*Grid Block v2 
+/*Grid Block v2
 ------------------------------------*/
 
 .grid-block-v2 li:hover .grid-block-v2-info {
   border-color: $primary;
 }
 
-/*Testimonials v3 Title 
+/*Testimonials v3 Title
 ------------------------------------*/
 
 .testimonials-v3 {
@@ -1186,20 +1218,24 @@ i {
   }
 }
 
-/*Content Boxes v4 
+/*Content Boxes v4
 ------------------------------------*/
 
-.content-boxes-v4 i, .thumbnails-v1 .read-more {
+.content-boxes-v4 i,
+.thumbnails-v1 .read-more {
   color: $primary;
 }
 
-/*Thumbnails v1 
+/*Thumbnails v1
 ------------------------------------*/
 
-/*Team v1 
+/*Team v1
 ------------------------------------*/
 
-.team-v1 li:hover > p:before, .headline-center h2:after, .headline-left .headline-brd:after, .portfolio-box .portfolio-box-in i {
+.team-v1 li:hover > p:before,
+.headline-center h2:after,
+.headline-left .headline-brd:after,
+.portfolio-box .portfolio-box-in i {
   background: $primary;
 }
 
