@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :machines, path: :maskiner, on: :member do
         resources :works, path: :arbete, on: :member
       end
+      resources :works, path: :maskiner, on: :member
 
     end
     resources :cities, path: :stader do

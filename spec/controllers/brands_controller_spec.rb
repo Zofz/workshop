@@ -7,6 +7,7 @@ RSpec.describe BrandsController, type: :controller do
   let(:new_attr) { attributes_for(:brand, title: "Fiske") }
 
   allow_user_to :manage, Brand
+
   before(:each) do
     brand
   end
@@ -14,7 +15,7 @@ RSpec.describe BrandsController, type: :controller do
   describe "GET #index" do
     it "assigns all brands as @brands" do
       get :index
-      expect(assigns(:brands)).to eq([brand])
+      expect(assigns(:brands)).to include(brand)
     end
   end
 

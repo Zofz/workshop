@@ -9,4 +9,8 @@ class Machine < ActiveRecord::Base
   has_many :parts, through: :product
 
   validates :customer, :product, presence: true
+
+  def to_s
+    %(#{product})
+  end
 end

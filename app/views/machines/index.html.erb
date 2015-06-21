@@ -18,6 +18,7 @@
         <tbody>
         <% @machines.each do |machine| %>
             <tr>
+              <td><%= link_to(t('show'), machine) %></td>
               <td><%= machine.customer.present? ? link_to(machine.customer, machine.customer) : 'Ingen' %></td>
               <td><%= machine.product.present? ? link_to(machine.product, machine.product) : 'Ingen' %></td>
               <td><%= machine.manufactured %></td>

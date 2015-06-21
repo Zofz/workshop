@@ -11,7 +11,7 @@ RSpec.describe CompaniesController, type: :controller do
   describe "GET #index" do
     it "assigns all companies as @companies" do
       get :index
-      expect(assigns(:companies)).to eq([company])
+      expect(assigns(:companies)).to eq(Company.all)
     end
   end
 

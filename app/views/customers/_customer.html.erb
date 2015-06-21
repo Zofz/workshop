@@ -1,8 +1,12 @@
 <div class="team-2">
   <div class="inner-team">
     <%= customer.company.present? ? company : nil  %>
-    <h3><%= customer %></h3>
-    <small class="green">Maskiner: <%=customer.machines.count%></small>
-    <small class="green">Uppdrag: <%=customer.works.count%></small>
+    <h3> <span class='customer-hover'><%= customer %>
+    <%= link_to(fa_icon('fighter-jet') + %( #{customer.machines.count}), customer_machines_path(customer))%>
+    <%= link_to(fa_icon('cog') + %( #{customer.works.count}), customer_works_path(customer))%>
+    </h3>
+    <div class='customer-attributes' style='<%= (hover.present? && hover == true) ? 'display: none;' : ''%>'>
+      <%= render 'elements/attributes', object: customer, attributes: [:phone, :email, :addresses] %>
+    </div>
   </div>
 </div>
