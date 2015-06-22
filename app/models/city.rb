@@ -5,6 +5,6 @@ class City < ActiveRecord::Base
   validates :postal_code, uniqueness: true
 
   def to_s
-    %(#{postal_code} - #{postal_title} (#{title}))
+    %(#{postal_code} #{postal_title})
   end
 end

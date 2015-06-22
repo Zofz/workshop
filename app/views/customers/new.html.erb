@@ -1,6 +1,7 @@
+<% breadcrumb :root, @customer %>
 <div class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 reg-page">
   <div class="page-header">
-    <h1><%= t('new.customer') %></h1>
+    <h1><%= t('new', attribute: Customer.model_name.human) %></h1>
   </div>
   <%= render 'form'%>
   <%= link_to t('back.start'), root_url %>

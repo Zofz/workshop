@@ -1,12 +1,36 @@
-<%= render @customer, hover: false %>
+<div class="col-md-7">
+  <%= render @customer, hover: false %>
+  <%= link_to(t('customer.edit'), edit_customer_path(@customer), class: "btn btn-primary") %>
+</div>
 
-<% if @customer.machines.count > 0 %>
-  <ul class='list'>
-    <% @customer.machines.each do |machine| %>
-      <li><%= link_to(machine,machine)%></li>
+<div class="col-md-5">
+  <div class="row">
+    <h3 class="headline headline-md"><%= Machine.model_name.human(count: 2) %> </h3>
+    <% if @customer.machines.count > 0 %>
+      <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+        <% first = true %>
+        <% @customer.machines.each do |machine| %>
+          <li class="list-group-item <% if first %>active<% else %> <% first = false %> <% end %>">
+            <%= link_to(machine, customer_machine_path(@customer, machine), class: "fa fa-car") %>
+          </li>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
-<%end%>
-<%= link_to 'Ny Maskin', new_customer_machine_path(@customer),
-  class: 'btn btn-u btn-u-primary' %>
-<%= render 'elements/links', object: @customer %>
+    <%= link_to(t('machine.new'), new_customer_machine_path(@customer), class: 'btn btn-u btn-u-primary')%>
+  </div>
+  <div class="row">
+    <h3 class="headline headline-md"><%= Work.model_name.human(count: 2) %> </h3>
+    <% if @customer.works.count > 0 %>
+      <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+        <% first = true %>
+        <% @customer.works.each do |work| %>
+          <li class="list-group-item <% if first %>active<% else %> <% first = false %> <% end %>">
+            <%= link_to(work, customer_work_path(@customer, work), class: "fa fa-car") %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= link_to(t('work.new'), new_customer_work_path(@customer), class: 'btn btn-u btn-u-primary')%>
+  </div>
+</div>
+</div>

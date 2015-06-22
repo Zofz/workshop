@@ -9,16 +9,19 @@ class CustomersController < ApplicationController
   end
 
   def new
+    @tab = :basic
     @customer.addresses.build
   end
 
   def edit
+    @tab = :basic
   end
 
   def create
     if @customer.save
       redirect_to edit_customer_path(@customer), success: alert_create(Customer)
     else
+      @tab = :basic
       render action: :new
     end
   end
@@ -27,6 +30,7 @@ class CustomersController < ApplicationController
     if @customer.update(customer_params)
       redirect_to edit_customer_path(@customer), success: alert_update(Customer)
     else
+      @tab = :basic
       render action: :edit
     end
   end

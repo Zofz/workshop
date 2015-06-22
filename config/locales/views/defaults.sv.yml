@@ -5,6 +5,8 @@ sv:
   remove: Ta bort %{attribute}
   select: Välj %{attribute}
 
+  save: Spara
+
   constants: Konstanter
   sign_out: Logga ut
   sign_in: Logga in

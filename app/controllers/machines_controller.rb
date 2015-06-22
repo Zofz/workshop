@@ -11,6 +11,7 @@ class MachinesController < ApplicationController
   end
 
   def new
+    @machine.product = Product.new
   end
 
   def edit

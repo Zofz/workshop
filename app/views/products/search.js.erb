@@ -1,0 +1,5 @@
+$("#product-search").html("<h3>Sökresultat:</h3>");
+$("#product-search").append("Brand: <%= j  @b.to_s %> <br>");
+$("#product-search").append("Type: <%= j  @m.to_s %> <br>");
+$("#product-search").append("<%= j render("tab", products: @products) %>");
+$("#product-search").append("Ny: <%=j @new_product.to_s %>");

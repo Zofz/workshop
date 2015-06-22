@@ -1,22 +1,31 @@
 <%= simple_form_for(@customer, html: {class: 'form-horizontal form-company'}) do |f| %>
   <%= f.error_notification %>
-  <div class='row'>
-    <div class='col-md-5'>
+  <ul class="nav nav-justified nav-tabs">
+    <li class="<%=@tab == :basic ? 'active' : ''%>"><a data-toggle="tab" href="#basic"><%= t('customer.basic') %></a></li>
+    <li class="<%=@tab == :addresses ? 'active' : ''%>"><a data-toggle="tab" href="#addresses"><%= t('customer.addresses') %></a></li>
+    <li class="<%=@tab == :extra ? 'active' : ''%>"><a data-toggle="tab" href="#extra"><%= t('customer.extra') %></a></li>
+  </ul>
+  <div class="customer tab-content">
+    <div id="basic" class="customer tab-pane fade in <%=@tab == :basic ? 'active' : ''%>">
       <%= f.input :firstname, autofocus: true %>
       <%= f.input :lastname %>
       <%= f.input :phone %>
       <%= f.input :email %>
-      <%= f.button :submit, class: 'btn btn-primary' %>
     </div>
-    <div class='col-md-5 col-md-offset-2'>
-      <%= f.input :old_id %>
-      <%= f.association :company, collection: Company.all %>
-      <%= f.simple_fields_for :addresses do |address| %>
+
+    <div id="addresses" class="profile-edit tab-pane fade in <%=@tab == :addresses ? 'active' : ''%>">
+      <% f.simple_fields_for :addresses do |address| %>
         <%= render 'address_fields', f: address %>
       <% end %>
       <div class='links'>
         <%= link_to_add_association 'Lägg till address', f, :addresses %>
       </div>
     </div>
+
+    <div id="extra" class="profile-edit tab-pane fade in <%=@tab == :extra ? 'active' : ''%>">
+      <%= f.input :old_id %>
+      <%= f.association :company, collection: Company.all %>
+    </div>
   </div>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

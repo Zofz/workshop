@@ -8,6 +8,7 @@ class Ability
       can :manage, :all
     elsif user.id.present?
       can [:read, :new, :create, :update, :destroy], :all
+      can :search, Product
     else
       can [:new, :create], :session
     end
