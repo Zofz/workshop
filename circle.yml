@@ -9,8 +9,7 @@ deployment:
     branch: master
     heroku:
       appname: verkstad
-
   staging:
     branch: dev
-      heroku:
-        appname: dev-verkstad
+    heroku:
+      appname: dev-verkstad
