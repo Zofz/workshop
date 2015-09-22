@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/derekprior/momentjs-rails.git
-  revision: 6db559c85d900e3236a3ec1027bb904de596257e
-  specs:
-    momentjs-rails (2.10.3)
-      railties (>= 3.1)
-
-GIT
   remote: git://github.com/plataformatec/devise.git
   revision: 2ccffc80b020cb3ac21b5b1ecbdfc9cba9e0804b
   specs:
@@ -16,14 +9,6 @@ GIT
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-
-GIT
-  remote: git://github.com/twbs/bootstrap-sass.git
-  revision: f1d9a2411839cfadeb2717b578734bbab8fb458b
-  specs:
-    bootstrap-sass (3.3.5.1)
-      autoprefixer-rails (>= 5.0.0.1)
-      sass (>= 3.3.0)
 
 GIT
   remote: git://github.com/zpaulovics/datetimepicker-rails.git
@@ -83,6 +68,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.5.1)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.3.0)
     bootstrap-sass-extras (0.0.6)
       rails (>= 3.1.0)
     builder (3.2.2)
@@ -116,7 +104,6 @@ GEM
       mime-types (>= 1.16, < 3)
       nokogiri (~> 1.5)
       rails (>= 3, < 5)
-    daemons (1.2.3)
     database_cleaner (1.5.0)
     debug_inspector (0.0.2)
     delayed_job (4.0.6)
@@ -126,12 +113,7 @@ GEM
       delayed_job (>= 3.0, < 4.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
-    dotenv (2.0.2)
-    dotenv-rails (2.0.2)
-      dotenv (= 2.0.2)
-      railties (~> 4.0)
     erubis (2.7.0)
-    eventmachine (1.0.5)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -159,18 +141,12 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mailcatcher (0.6.1)
-      activesupport (>= 4.0.0, < 5)
-      eventmachine (~> 1.0.0, <= 1.0.5)
-      mail (~> 2.3)
-      sinatra (~> 1.2)
-      skinny (~> 0.2.3)
-      sqlite3 (~> 1.3)
-      thin (~> 1.5.0)
     method_source (0.8.2)
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.0)
+    momentjs-rails (2.10.3)
+      railties (>= 3.1)
     multi_json (1.11.2)
     multi_test (0.1.2)
     nokogiri (1.6.6.2)
@@ -193,8 +169,6 @@ GEM
       slop (~> 3.4)
     puma (2.14.0)
     rack (1.6.4)
-    rack-protection (1.5.3)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rack-timeout (0.3.2)
@@ -271,13 +245,6 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    sinatra (1.4.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    skinny (0.2.3)
-      eventmachine (~> 1.0.0)
-      thin (~> 1.5.0)
     slop (3.6.0)
     spring (1.4.0)
     sprockets (3.3.4)
@@ -286,11 +253,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.10)
-    thin (1.5.1)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
@@ -316,9 +278,8 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass!
+  bootstrap-sass
   bootstrap-sass-extras
-  bundler
   cancancan
   capybara
   cocoon
@@ -329,14 +290,12 @@ DEPENDENCIES
   datetimepicker-rails!
   delayed_job_active_record
   devise!
-  dotenv-rails
   factory_girl_rails
   font-awesome-rails
   gretel
   jbuilder
   jquery-rails
-  mailcatcher
-  momentjs-rails (~> 2.9)!
+  momentjs-rails
   paper_trail (~> 4.0.0.beta)
   pg
   postmark-rails
