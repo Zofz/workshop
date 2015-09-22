@@ -1,6 +1,4 @@
-<%= simple_form_for(@machine, html: {class: 'form-horizontal form-company'}) do |f| %>
-    <%= f.error_notification %>
-
+<%= simple_form_for(@machine) do |f| %>
     <div class="form-inputs">
       <%= f.association :product, collection: Product.all %>
       <%= f.hidden_field :customer_id, value: @customer.try(:id) %>
@@ -10,6 +8,7 @@
       <%= f.input :deck_nbr %>
       <%= f.input :old_id %>
     </div>
+
     <div class="form-group">
       <div class="col-md-offset-4 col-md-8">
         <%= f.button :submit, class: 'btn btn-primary' %>
