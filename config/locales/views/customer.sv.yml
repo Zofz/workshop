@@ -1,4 +1,5 @@
 sv:
   customer:
     new: Ny kund
+    edit: Redigera kund
     index: Alla kunder

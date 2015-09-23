@@ -1,15 +1,11 @@
 <dl class='list-unstyled'>
   <% attributes.each do |a| %>
-    <dt class='color-green'>
+    <dd class="">
     <% if a == :phone || a == :cellphone %>
       <%= fa_icon('phone') %>
     <% elsif a == :email %>
       <%= fa_icon('envelope') %>
     <% end %>
-    <%= object.class.human_attribute_name(a) %>:
-
-    </dt>
-    <dd>
     <% if a == :phone || a == :cellphone %>
       <%= link_to(object.try(a),%(tel:#{object.try(a)})) %>
     <% elsif a == :email %>

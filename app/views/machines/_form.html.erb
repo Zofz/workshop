@@ -1,6 +1,4 @@
-<%= simple_form_for(@machine, html: {class: 'form-horizontal form-company'}) do |f| %>
-    <%= f.error_notification %>
-
+<%= simple_form_for(@machine) do |f| %>
     <div class="form-inputs">
       <%= f.association :product, collection: Product.all %>
       <%= f.hidden_field :customer_id, value: @customer.try(:id) %>
@@ -10,10 +8,45 @@
       <%= f.input :deck_nbr %>
       <%= f.input :old_id %>
     </div>
+
     <div class="form-group">
       <div class="col-md-offset-4 col-md-8">
         <%= f.button :submit, class: 'btn btn-primary' %>
       </div>
     </div>
 
+  <div class="form-inputs">
+    <div class='tab-v1'>
+      <ul class='nav nav-justified nav-tabs'>
+        <li class='active'><a data-toggle='tab' href='#type-select'>Select WorkType</a></li>
+        <li><a data-toggle='tab' href='#type-new'>New WorkType</a></li>
+      </ul>
+      <div class='tab-content'>
+        <div id='type-select' class='brand-select tab-pane fade in active'>
+          <%= f.association :product, collection: MachineType.all %>
+        </div>
+        <div id='type-new' class='profile-edit tab-pane fade'>
+          <%= f.simple_fields_for :machine_type, MachineType.new do |p| %>
+            <%= render 'machine_types/fields', var: p %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class='tab-v1'>
+      <ul class='nav nav-justified nav-tabs'>
+        <li class='active'>
+          <%= link_to(t(:select, attribute: Brand.model_name.human), '#brand-select', data: { toggle: 'tab' }) %>
+        </li>
+        <li>
+          <%= link_to(t(:new, attribute: Brand.model_name.human), '#brand-new', data: { toggle: 'tab' }) %>
+        </li>
+      </ul>
+      <div class='tab-content'>
+        <div id='brand-select' class='brand-select tab-pane fade in active'>
+        </div>
+        <div id='brand-new' class='brand-edit tab-pane fade'>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>

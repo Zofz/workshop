@@ -1,11 +1,15 @@
 machine:
   ruby:
-    version: 2.2.1
+    version: 2.2.3
 test:
   pre:
     - CODECLIMATE_REPO_TOKEN=CRT
 deployment:
-  prod:
+  production:
     branch: master
     heroku:
       appname: verkstad
+  staging:
+    branch: dev
+    heroku:
+      appname: dev-verkstad

@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
   validates :brand_id, :machine_type_id, :product_nbr,
                        presence: true
 
+  attr_accessor :search
+
   def to_s
     %(#{brand} #{machine_type} #{product_nbr})
   end

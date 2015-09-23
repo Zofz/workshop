@@ -1,0 +1,8 @@
+<% if products.count > 0 %>
+  <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+    <% first = true %>
+    <% products.each do |product| %>
+      <%= render 'tab_product', product: product %>
+    <% end %>
+  </ul>
+<% end %>

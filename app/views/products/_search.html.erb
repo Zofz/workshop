@@ -1,0 +1,7 @@
+<%= simple_form_for(product, url: search_products_path, remote: true) do |f| %>
+  <%= f.input :search %>
+  <%= f.submit :button, class: "btn btn-primary" %>
+<% end %>
+<div id="product-search" class="row">
+
+</div>

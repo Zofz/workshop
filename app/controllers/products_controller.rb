@@ -34,6 +34,16 @@ class ProductsController < ApplicationController
     redirect_to products_path, notice: alert_destroy(Product)
   end
 
+  def search
+    a = params[:product][:search].split
+    # @b = Brand.find_by(title: a[0])
+    @b = Brand.where('title LIKE ?', %(%#{a[0]}%)).first
+    # @m = MachineType.find_by(title: a[1])
+    @m = MachineType.where('title LIKE ?', %(%#{a[1]}%)).first
+    @products = Product.where(brand: @b, machine_type: @m)
+    @new_product = Product.find_or_create_by(brand: @b, machine_type: @m)
+  end
+
   private
 
   def product_params

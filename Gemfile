@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.2.3'
 
 gem 'binding_of_caller'
-gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
-gem 'bundler'
 gem 'cancancan'
 gem 'cocoon'
 gem 'coffee-rails'
@@ -14,15 +13,16 @@ gem 'datetimepicker-rails',
 gem 'devise', github: 'plataformatec/devise'
 gem 'delayed_job_active_record'
 gem 'font-awesome-rails'
+gem 'gretel'
 gem 'jbuilder'
 gem 'jquery-rails'
-gem 'momentjs-rails', '~> 2.9', github: 'derekprior/momentjs-rails'
+gem 'momentjs-rails'
 gem 'paper_trail', '~> 4.0.0.beta'
 gem 'pg'
 gem 'postmark-rails'
 gem 'puma'
 gem 'rack-timeout'
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.4'
 gem 'rails_12factor', group: :production
 gem 'sass-rails'
 gem 'simple_form'
@@ -47,11 +47,9 @@ group :development do
   gem 'better_errors'
   gem 'pry'
   gem 'spring'
-  gem 'mailcatcher'
 end
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'rspec-example_steps'
   gem 'factory_girl_rails'

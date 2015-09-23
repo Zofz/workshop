@@ -1,13 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-4 col-sm-6 col-sm-offset-3 reg-page">
-      <% if @customer.present? %>
-          <%= label_tag @customer,nil, :class => 'reg-header'%>
-          <%else%>
-      <%= label_tag 'Ny Kund',nil, :class => 'reg-header'%>
-          <%end%>
-      <%= render 'form'%>
-      <%= link_to 'Tillbaka till start', root_url %>
-    </div>
-  </div>
+<div class="col-xs-6">
+  <%= render 'form' %>
 </div>
+<div class="col-xs-6">
+  <%= render 'products/search', product: @machine.product %>
+</div>
+<%= link_to(t(:back_to_root), root_url) %>

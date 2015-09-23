@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     sessions: "user/sessions",
-    registrations: "user/registrations"
+    registrations: "user/registrations", as: :anvandare
   }
 
   resource :user, path: :anvandare
@@ -30,7 +30,9 @@ Rails.application.routes.draw do
     resources :machines, path: :maskiner
     resources :machine_types, path: :typer
     resources :brands, path: :marke
-    resources :products, path: :produkter
+    resources :products, path: :produkter do
+      post :search, on: :collection, path: :sok
+    end
 
     resources :roles
     resources :work_types, path: :arbetstyper
